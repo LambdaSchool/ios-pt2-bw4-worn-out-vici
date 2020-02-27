@@ -10,7 +10,6 @@ import HealthKit
 
 class HealthKitController {
     func retrieveWorkouts() {
-        
         // Predicate to read only running workouts
         let predicate = HKQuery.predicateForWorkouts(with: .running)
         

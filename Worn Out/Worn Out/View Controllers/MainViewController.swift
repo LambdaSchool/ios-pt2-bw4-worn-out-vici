@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import HealthKit
 
 class MainViewController: UIViewController {
+    
+    let healthKitController = HealthKitController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        HealthKitSetupAssistant.authorizeHealtKit { (isAuthorized, error) in
+            if isAuthorized {
+                self.healthKitController.retrieveWorkouts()
+            }
+        }
 
         
     }
