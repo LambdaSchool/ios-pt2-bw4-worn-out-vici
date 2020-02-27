@@ -18,6 +18,7 @@
 		E352FF8624076C3D001E31AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF8524076C3D001E31AC /* MainViewController.swift */; };
 		E352FF882408473B001E31AC /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF872408473A001E31AC /* Run.swift */; };
 		E352FF8A2408476B001E31AC /* Shoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF892408476B001E31AC /* Shoe.swift */; };
+		E352FF8C24085817001E31AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF8B24085817001E31AC /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		E352FF8524076C3D001E31AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E352FF872408473A001E31AC /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		E352FF892408476B001E31AC /* Shoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shoe.swift; sourceTree = "<group>"; };
+		E352FF8B24085817001E31AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				E352FF872408473A001E31AC /* Run.swift */,
 				E352FF892408476B001E31AC /* Shoe.swift */,
+				E352FF8B24085817001E31AC /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				E352FF882408473B001E31AC /* Run.swift in Sources */,
 				E352FF8A2408476B001E31AC /* Shoe.swift in Sources */,
 				E352FF5C24061D97001E31AC /* AppDelegate.swift in Sources */,
+				E352FF8C24085817001E31AC /* User.swift in Sources */,
 				E352FF842407641B001E31AC /* HealthKitController.swift in Sources */,
 				E352FF5E24061D97001E31AC /* SceneDelegate.swift in Sources */,
 				E352FF8624076C3D001E31AC /* MainViewController.swift in Sources */,
