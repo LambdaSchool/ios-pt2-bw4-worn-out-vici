@@ -60,5 +60,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>We would like to use your running miles to populate the app</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>We would like to use your running miles to populate the app</string>
 </dict>
 </plist>
