@@ -16,9 +16,11 @@
 		E352FF8224075FC5001E31AC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E352FF8124075FC5001E31AC /* HealthKit.framework */; };
 		E352FF842407641B001E31AC /* HealthKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF832407641B001E31AC /* HealthKitController.swift */; };
 		E352FF8624076C3D001E31AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF8524076C3D001E31AC /* MainViewController.swift */; };
-		E352FF882408473B001E31AC /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF872408473A001E31AC /* Run.swift */; };
-		E352FF8A2408476B001E31AC /* Shoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF892408476B001E31AC /* Shoe.swift */; };
+		E352FF882408473B001E31AC /* RunRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF872408473A001E31AC /* RunRepresentation.swift */; };
+		E352FF8A2408476B001E31AC /* ShoeRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF892408476B001E31AC /* ShoeRepresentation.swift */; };
 		E352FF8C24085817001E31AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF8B24085817001E31AC /* User.swift */; };
+		E352FF8F24089CD5001E31AC /* WornOut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E352FF8D24089CD4001E31AC /* WornOut.xcdatamodeld */; };
+		E352FF912408A4F3001E31AC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF902408A4F3001E31AC /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +36,11 @@
 		E352FF8124075FC5001E31AC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E352FF832407641B001E31AC /* HealthKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitController.swift; sourceTree = "<group>"; };
 		E352FF8524076C3D001E31AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		E352FF872408473A001E31AC /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
-		E352FF892408476B001E31AC /* Shoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shoe.swift; sourceTree = "<group>"; };
+		E352FF872408473A001E31AC /* RunRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunRepresentation.swift; sourceTree = "<group>"; };
+		E352FF892408476B001E31AC /* ShoeRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeRepresentation.swift; sourceTree = "<group>"; };
 		E352FF8B24085817001E31AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E352FF8E24089CD4001E31AC /* WornOut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WornOut.xcdatamodel; sourceTree = "<group>"; };
+		E352FF902408A4F3001E31AC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +103,10 @@
 		E352FF7024061DB5001E31AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E352FF872408473A001E31AC /* Run.swift */,
-				E352FF892408476B001E31AC /* Shoe.swift */,
+				E352FF902408A4F3001E31AC /* CoreDataStack.swift */,
+				E352FF8D24089CD4001E31AC /* WornOut.xcdatamodeld */,
+				E352FF872408473A001E31AC /* RunRepresentation.swift */,
+				E352FF892408476B001E31AC /* ShoeRepresentation.swift */,
 				E352FF8B24085817001E31AC /* User.swift */,
 			);
 			path = Models;
@@ -216,9 +222,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E352FF7E24075FB2001E31AC /* HealthKitSetupAssistant.swift in Sources */,
-				E352FF882408473B001E31AC /* Run.swift in Sources */,
-				E352FF8A2408476B001E31AC /* Shoe.swift in Sources */,
+				E352FF882408473B001E31AC /* RunRepresentation.swift in Sources */,
+				E352FF8A2408476B001E31AC /* ShoeRepresentation.swift in Sources */,
 				E352FF5C24061D97001E31AC /* AppDelegate.swift in Sources */,
+				E352FF8F24089CD5001E31AC /* WornOut.xcdatamodeld in Sources */,
+				E352FF912408A4F3001E31AC /* CoreDataStack.swift in Sources */,
 				E352FF8C24085817001E31AC /* User.swift in Sources */,
 				E352FF842407641B001E31AC /* HealthKitController.swift in Sources */,
 				E352FF5E24061D97001E31AC /* SceneDelegate.swift in Sources */,
@@ -422,6 +430,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E352FF8D24089CD4001E31AC /* WornOut.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E352FF8E24089CD4001E31AC /* WornOut.xcdatamodel */,
+			);
+			currentVersion = E352FF8E24089CD4001E31AC /* WornOut.xcdatamodel */;
+			path = WornOut.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E352FF5024061D97001E31AC /* Project object */;
 }

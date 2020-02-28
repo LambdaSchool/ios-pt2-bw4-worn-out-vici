@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Run" representedClassName=".Run" syncable="YES" codeGenerationType="class">
+        <attribute name="miles" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="workoutIdentifier" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="shoe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Shoe" inverseName="runs" inverseEntity="Shoe"/>
+    </entity>
+    <entity name="Shoe" representedClassName=".Shoe" syncable="YES" codeGenerationType="class">
+        <attribute name="brand" optional="YES" attributeType="String"/>
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="isPrimary" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="maxMiles" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="nickname" optional="YES" attributeType="String"/>
+        <attribute name="style" optional="YES" attributeType="String"/>
+        <relationship name="runs" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Run" inverseName="shoe" inverseEntity="Run"/>
+    </entity>
+    <elements>
+        <element name="Shoe" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Run" positionX="-45" positionY="54" width="128" height="103"/>
+    </elements>
+</model>

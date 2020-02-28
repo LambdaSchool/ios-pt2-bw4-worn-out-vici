@@ -1,5 +1,5 @@
 //
-//  Run.swift
+//  RunRepresentation.swift
 //  Worn Out
 //
 //  Created by Vici Shaweddy on 2/27/20.
@@ -8,9 +8,8 @@
 
 import Foundation
 
-struct Run {
-    let workoutIdentifier: String //HKObject UUID
+struct RunRepresentation: Codable {
+    let workoutIdentifier: UUID //HKObject UUID
     let startDate: Date
     let miles: Double
-    let shoe: Shoe
 }
