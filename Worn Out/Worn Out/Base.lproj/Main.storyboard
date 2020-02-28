@@ -14,7 +14,28 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7Gw-VS-04X">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="49c-sm-7sQ">
+                                        <rect key="frame" x="20" y="55.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="49c-sm-7sQ" id="0M9-86-hFl">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="7Gw-VS-04X" secondAttribute="bottom" id="7bs-Vt-1jj"/>
+                            <constraint firstItem="7Gw-VS-04X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fUk-5c-cAO"/>
+                            <constraint firstAttribute="trailing" secondItem="7Gw-VS-04X" secondAttribute="trailing" id="lff-k2-JeL"/>
+                            <constraint firstItem="7Gw-VS-04X" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nuR-ur-t1Y"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Worn Out" id="2Kk-pM-JCb"/>
@@ -22,6 +43,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9Ye-2i-I2w">
+            <objects>
+                <viewController id="A4z-QX-iut" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RpP-or-JVF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="eCp-Ks-6Y3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a1Z-0r-pw9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wkb-pQ-fJZ">
