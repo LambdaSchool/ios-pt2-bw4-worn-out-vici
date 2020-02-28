@@ -10,6 +10,6 @@ import Foundation
 
 struct User {
     let name: String
-    let shoes: [Shoe]
-    let runs: [Run]
+//    let shoes: [Shoe]
+//    let runs: [Run]
 }

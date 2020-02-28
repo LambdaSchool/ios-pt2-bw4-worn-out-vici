@@ -1,5 +1,5 @@
 //
-//  Shoe.swift
+//  ShoeRepresentation.swift
 //  Worn Out
 //
 //  Created by Vici Shaweddy on 2/27/20.
@@ -8,13 +8,12 @@
 
 import Foundation
 
-struct Shoe {
+struct ShoeRepresentation: Codable {
     let identifier: String
     let brand: String
     let style: String
     let nickname: String
     let maxMiles: Double = 350.00
-    let runs: [Run]
     let isPrimary: Bool
     let totalMiles: Double
 }
