@@ -52,10 +52,10 @@ class ShoeController {
         // let currentMiles = shoe.totalMiles
         
         // get the current miles from the run
-//        var totalMiles: Double = 0
-//        for run in shoe.runs {
-//          totalMiles += run.miles
-//        }
+        // var totalMiles: Double = 0
+        //        for run in shoe.runs {
+        //          totalMiles += run.miles
+        //        }
             
         // code above is the same like below
         let runs = shoe.runs?.array as? [Run] // cast it from NSOrderedSet to [Run]
