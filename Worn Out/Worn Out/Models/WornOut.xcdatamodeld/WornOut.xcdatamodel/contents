@@ -8,15 +8,16 @@
     </entity>
     <entity name="Shoe" representedClassName=".Shoe" syncable="YES" codeGenerationType="class">
         <attribute name="brand" optional="YES" attributeType="String"/>
-        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="identifier" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isPrimary" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="maxMiles" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="nickname" optional="YES" attributeType="String"/>
         <attribute name="style" optional="YES" attributeType="String"/>
+        <attribute name="totalMiles" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="runs" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Run" inverseName="shoe" inverseEntity="Run"/>
     </entity>
     <elements>
-        <element name="Shoe" positionX="-63" positionY="-18" width="128" height="148"/>
         <element name="Run" positionX="-45" positionY="54" width="128" height="103"/>
+        <element name="Shoe" positionX="-63" positionY="-18" width="128" height="163"/>
     </elements>
 </model>
