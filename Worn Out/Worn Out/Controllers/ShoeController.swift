@@ -9,12 +9,13 @@
 import Foundation
 
 class ShoeController {
+    private let context = CoreDataStack.shared.mainContext
+    
     func addShoe(for brand: String, style: String, nickname: String?, id: UUID, maxMiles: Double?, isPrimary: Bool, totalMiles: Double?) {
         let _ = Shoe(brand: brand, nickname: nickname, maxMiles: maxMiles ?? 350.00, isPrimary: isPrimary, totalMiles: totalMiles ?? 0.0)
         
         do {
-            let moc = CoreDataStack.shared.mainContext
-            try moc.save()
+            try self.context.save()
         } catch {
             print("Error saving managed object content: \(error)")
         }
@@ -28,8 +29,7 @@ class ShoeController {
         shoe.isPrimary = isPrimary
         
         do {
-            let moc = CoreDataStack.shared.mainContext
-            try moc.save()
+            try self.context.save()
         } catch {
             print("Error saving managed object content: \(error)")
         }
@@ -37,25 +37,33 @@ class ShoeController {
     
     func deleteShoe(shoe: Shoe) {
         // delete from local
-        let moc = CoreDataStack.shared.mainContext
-        moc.delete(shoe)
+        self.context.delete(shoe)
         
         do {
-            try moc.save()
+            try self.context.save()
         } catch {
-            moc.reset()
+            self.context.reset()
             print("Error saving managed object context: \(error)")
         }
     }
     
-    func totalMiles(shoe: Shoe, run:Run) -> Double {
+    func totalMiles(for shoe: Shoe) -> Double {
         // get the current miles from the shoe
-        let currentMiles = shoe.totalMiles
+        // let currentMiles = shoe.totalMiles
         
         // get the current miles from the run
-        let runMiles = run.miles
+//        var totalMiles: Double = 0
+//        for run in shoe.runs {
+//          totalMiles += run.miles
+//        }
+            
+        // code above is the same like below
+        let runs = shoe.runs?.array as? [Run] // cast it from NSOrderedSet to [Run]
+        let totalMiles = runs?.reduce(0) { curr, next in
+            curr + next.miles
+        }
         
         // total the miles
-        return currentMiles + runMiles
+        return totalMiles ?? 0
     }
 }
