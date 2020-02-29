@@ -21,6 +21,8 @@
 		E352FF8C24085817001E31AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF8B24085817001E31AC /* User.swift */; };
 		E352FF8F24089CD5001E31AC /* WornOut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E352FF8D24089CD4001E31AC /* WornOut.xcdatamodeld */; };
 		E352FF912408A4F3001E31AC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF902408A4F3001E31AC /* CoreDataStack.swift */; };
+		E352FF9B24099FC7001E31AC /* ShoeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF9A24099FC7001E31AC /* ShoeController.swift */; };
+		E352FF9D2409D353001E31AC /* Shoe+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF9C2409D353001E31AC /* Shoe+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		E352FF8B24085817001E31AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E352FF8E24089CD4001E31AC /* WornOut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WornOut.xcdatamodel; sourceTree = "<group>"; };
 		E352FF902408A4F3001E31AC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		E352FF9A24099FC7001E31AC /* ShoeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeController.swift; sourceTree = "<group>"; };
+		E352FF9C2409D353001E31AC /* Shoe+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shoe+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 				E352FF872408473A001E31AC /* RunRepresentation.swift */,
 				E352FF892408476B001E31AC /* ShoeRepresentation.swift */,
 				E352FF8B24085817001E31AC /* User.swift */,
+				E352FF9C2409D353001E31AC /* Shoe+Convenience.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				E352FF832407641B001E31AC /* HealthKitController.swift */,
+				E352FF9A24099FC7001E31AC /* ShoeController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -221,9 +227,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E352FF9B24099FC7001E31AC /* ShoeController.swift in Sources */,
 				E352FF7E24075FB2001E31AC /* HealthKitSetupAssistant.swift in Sources */,
 				E352FF882408473B001E31AC /* RunRepresentation.swift in Sources */,
 				E352FF8A2408476B001E31AC /* ShoeRepresentation.swift in Sources */,
+				E352FF9D2409D353001E31AC /* Shoe+Convenience.swift in Sources */,
 				E352FF5C24061D97001E31AC /* AppDelegate.swift in Sources */,
 				E352FF8F24089CD5001E31AC /* WornOut.xcdatamodeld in Sources */,
 				E352FF912408A4F3001E31AC /* CoreDataStack.swift in Sources */,

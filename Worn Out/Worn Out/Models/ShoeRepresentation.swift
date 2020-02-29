@@ -11,9 +11,9 @@ import Foundation
 struct ShoeRepresentation: Codable {
     let identifier: String
     let brand: String
-    let style: String
+    let style: String?
     let nickname: String
-    let maxMiles: Double = 350.00
+    let maxMiles: Double
     let isPrimary: Bool
     let totalMiles: Double
 }

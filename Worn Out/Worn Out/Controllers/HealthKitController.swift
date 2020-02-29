@@ -90,7 +90,9 @@ class HealthKitController {
                                         limit: HKObjectQueryNoLimit,
                                         sortDescriptors: [sortDescriptor]) { (query, results, error) in
                                             if let results = results {
-                                                completion(results)
+                                                DispatchQueue.main.async {
+                                                    completion(results)
+                                                }
                                             } else {
                                                 print("Error retrieving workouts")
                                             }

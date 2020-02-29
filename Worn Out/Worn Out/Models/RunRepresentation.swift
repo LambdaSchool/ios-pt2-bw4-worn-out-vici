@@ -9,7 +9,7 @@
 import Foundation
 
 struct RunRepresentation: Codable {
-    let workoutIdentifier: UUID //HKObject UUID
+    let workoutIdentifier: String
     let startDate: Date
     let miles: Double
 }
