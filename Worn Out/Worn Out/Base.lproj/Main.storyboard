@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,12 +19,70 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7Gw-VS-04X">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="49c-sm-7sQ">
-                                        <rect key="frame" x="20" y="55.5" width="374" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SummaryCell" id="Bsk-Fl-OS3" customClass="SummaryTableViewCell" customModule="Worn_Out" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.5" width="374" height="157.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="49c-sm-7sQ" id="0M9-86-hFl">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bsk-Fl-OS3" id="kfY-9i-fPD">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="157.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="IXg-rc-g8j" userLabel="Main Stack View">
+                                                    <rect key="frame" x="16" y="16" width="342" height="125.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zed-kM-E9V" userLabel="Run Stack View">
+                                                            <rect key="frame" x="0.0" y="0.0" width="342" height="41.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5c-Oc-ps6">
+                                                                    <rect key="frame" x="0.0" y="12.5" width="186.5" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="110 miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8We-SQ-WRW">
+                                                                    <rect key="frame" x="194.5" y="0.5" width="147.5" height="41"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="8We-SQ-WRW" secondAttribute="trailing" id="rzd-OM-NHu"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MUw-Dl-kZ2" userLabel="Shoe Stack View">
+                                                            <rect key="frame" x="0.0" y="71.5" width="342" height="54"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marathon Shoes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2EU-85-iCW">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="342" height="33.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nike ZoomX Vaporfly NEXT%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZg-V0-xjk">
+                                                                    <rect key="frame" x="0.0" y="33.5" width="342" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Zed-kM-E9V" firstAttribute="top" secondItem="IXg-rc-g8j" secondAttribute="top" id="AUC-TZ-DQb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="MUw-Dl-kZ2" secondAttribute="bottom" id="LkX-0K-ayE"/>
+                                                        <constraint firstAttribute="trailing" secondItem="MUw-Dl-kZ2" secondAttribute="trailing" id="Q1z-F5-kIb"/>
+                                                        <constraint firstItem="MUw-Dl-kZ2" firstAttribute="leading" secondItem="IXg-rc-g8j" secondAttribute="leading" id="YXL-kB-tdI"/>
+                                                        <constraint firstItem="Zed-kM-E9V" firstAttribute="leading" secondItem="IXg-rc-g8j" secondAttribute="leading" id="gPM-wI-nL5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Zed-kM-E9V" secondAttribute="trailing" id="tbh-e3-2HY"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="IXg-rc-g8j" firstAttribute="top" secondItem="kfY-9i-fPD" secondAttribute="top" constant="16" id="GWs-Ii-rXP"/>
+                                                <constraint firstItem="IXg-rc-g8j" firstAttribute="leading" secondItem="kfY-9i-fPD" secondAttribute="leading" constant="16" id="Nvx-4w-Lna"/>
+                                                <constraint firstAttribute="bottom" secondItem="IXg-rc-g8j" secondAttribute="bottom" constant="16" id="ehQ-U6-Odg"/>
+                                                <constraint firstAttribute="trailing" secondItem="IXg-rc-g8j" secondAttribute="trailing" constant="16" id="kTn-TA-hSh"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
