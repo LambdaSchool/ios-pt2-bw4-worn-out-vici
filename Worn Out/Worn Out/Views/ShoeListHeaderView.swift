@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ShoeListHeaderViewDelegate: AnyObject {
+    func addShoePressed()
+}
+
 class ShoeListHeaderView: UITableViewHeaderFooterView {
     private lazy var stackView: UIStackView = {
         let view = UIStackView()
@@ -29,8 +33,11 @@ class ShoeListHeaderView: UITableViewHeaderFooterView {
     private lazy var addButton: UIButton = {
         let button = UIButton(type: .contactAdd)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(addPressed), for: .primaryActionTriggered)
         return button
     }()
+    
+    weak var delegate: ShoeListHeaderViewDelegate?
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -39,6 +46,10 @@ class ShoeListHeaderView: UITableViewHeaderFooterView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func addPressed() {
+        self.delegate?.addShoePressed()
     }
     
     private func setupStackView() {

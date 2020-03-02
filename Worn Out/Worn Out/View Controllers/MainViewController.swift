@@ -83,11 +83,18 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ShoeListHeader") as! ShoeListHeaderView
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ShoeListHeader") as? ShoeListHeaderView
+        view?.delegate = self
         return view
     }
 }
 
 extension MainViewController: UITableViewDelegate {
     
+}
+
+extension MainViewController: ShoeListHeaderViewDelegate {
+    func addShoePressed() {
+        self.performSegue(withIdentifier: "AddShoeSegue", sender: self)
+    }
 }
