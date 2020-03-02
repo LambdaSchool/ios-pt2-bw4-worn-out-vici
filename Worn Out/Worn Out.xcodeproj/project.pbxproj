@@ -26,6 +26,7 @@
 		E390158A240C3E4C0030CA1B /* ShoeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3901589240C3E4C0030CA1B /* ShoeListTableViewCell.swift */; };
 		E390158C240C4BF00030CA1B /* ShoeListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E390158B240C4BF00030CA1B /* ShoeListHeaderView.swift */; };
 		E390158E240C55AA0030CA1B /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E390158D240C55AA0030CA1B /* SummaryTableViewCell.swift */; };
+		E3901592240CAB330030CA1B /* AddShoeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3901591240CAB330030CA1B /* AddShoeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		E3901589240C3E4C0030CA1B /* ShoeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeListTableViewCell.swift; sourceTree = "<group>"; };
 		E390158B240C4BF00030CA1B /* ShoeListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeListHeaderView.swift; sourceTree = "<group>"; };
 		E390158D240C55AA0030CA1B /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
+		E3901591240CAB330030CA1B /* AddShoeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShoeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				E352FF8524076C3D001E31AC /* MainViewController.swift */,
+				E3901591240CAB330030CA1B /* AddShoeTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				E352FF7E24075FB2001E31AC /* HealthKitSetupAssistant.swift in Sources */,
 				E352FF882408473B001E31AC /* RunRepresentation.swift in Sources */,
 				E352FF8A2408476B001E31AC /* ShoeRepresentation.swift in Sources */,
+				E3901592240CAB330030CA1B /* AddShoeTableViewController.swift in Sources */,
 				E352FF9D2409D353001E31AC /* Shoe+Convenience.swift in Sources */,
 				E352FF5C24061D97001E31AC /* AppDelegate.swift in Sources */,
 				E352FF8F24089CD5001E31AC /* WornOut.xcdatamodeld in Sources */,
