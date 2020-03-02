@@ -10,6 +10,10 @@ import UIKit
 
 class AddShoeTableViewController: UITableViewController {
     @IBOutlet weak var brandTextField: UITextField!
+    @IBOutlet weak var typeTextField: UITextField!
+    @IBOutlet weak var nickNameTextField: UITextField!
+    @IBOutlet weak var primarySwitch: UISwitch!
+    @IBOutlet weak var maxMilesTextField: UITextField!
     
     let brands = ["Nike",
                   "Adidas",
@@ -28,6 +32,13 @@ class AddShoeTableViewController: UITableViewController {
         self.createBrandPicker()
         self.createToolbar()
         self.tapToDismiss()
+    }
+    
+    @IBAction func savePressed(_ sender: Any) {
+    }
+    
+    @IBAction func cancelPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     private func tapToDismiss() {
