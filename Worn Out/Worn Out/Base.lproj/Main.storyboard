@@ -269,11 +269,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Shoe" id="U0M-gS-eYf">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="frN-Zm-yGM"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="gve-sZ-SfQ"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="frN-Zm-yGM">
+                            <connections>
+                                <action selector="cancelPressed:" destination="whQ-je-jpn" id="aGw-22-TM9"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="gve-sZ-SfQ">
+                            <connections>
+                                <action selector="savePressed:" destination="whQ-je-jpn" id="hlM-pg-PRn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="brandTextField" destination="5mj-Gg-jeL" id="2C5-Sc-32v"/>
+                        <outlet property="maxMilesTextField" destination="LTr-tW-dBT" id="dAn-aR-j2J"/>
+                        <outlet property="nickNameTextField" destination="AiL-lw-IEa" id="oEq-6U-GO5"/>
+                        <outlet property="primarySwitch" destination="KId-Er-feL" id="fnA-Sk-xAb"/>
+                        <outlet property="typeTextField" destination="17e-5h-5vR" id="w4N-FV-KpH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJV-5Y-sCW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
