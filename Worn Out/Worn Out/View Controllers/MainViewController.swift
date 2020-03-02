@@ -10,6 +10,7 @@ import UIKit
 import HealthKit
 
 class MainViewController: UIViewController {
+    @IBOutlet private var tableView: UITableView!
     
     let healthKitController = HealthKitController()
 
