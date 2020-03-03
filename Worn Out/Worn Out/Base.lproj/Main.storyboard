@@ -84,6 +84,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="IXg-rc-g8j" secondAttribute="trailing" constant="16" id="kTn-TA-hSh"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="brandLabel" destination="TZg-V0-xjk" id="swd-l4-wlj"/>
+                                            <outlet property="nicknameLabel" destination="2EU-85-iCW" id="0Uc-Ve-oiH"/>
+                                            <outlet property="timeLabel" destination="D5c-Oc-ps6" id="816-x9-0Fk"/>
+                                            <outlet property="totalMilesLabel" destination="8We-SQ-WRW" id="Vkc-89-FXP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
