@@ -111,7 +111,7 @@
         <scene sceneID="l4U-py-Xez">
             <objects>
                 <tableViewController id="whQ-je-jpn" customClass="AddShoeTableViewController" customModule="Worn_Out" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="KQG-US-EkP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="KQG-US-EkP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -153,13 +153,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lb1-vg-G5F">
-                                                    <rect key="frame" x="20" y="12" width="37.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lb1-vg-G5F">
+                                                    <rect key="frame" x="20" y="11.5" width="39" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="React" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="17e-5h-5vR" userLabel="Type Text Field">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="React" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="17e-5h-5vR" userLabel="Style Text Field">
                                                     <rect key="frame" x="357" y="13.5" width="37" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -283,9 +283,9 @@
                     <connections>
                         <outlet property="brandTextField" destination="5mj-Gg-jeL" id="2C5-Sc-32v"/>
                         <outlet property="maxMilesTextField" destination="LTr-tW-dBT" id="dAn-aR-j2J"/>
-                        <outlet property="nickNameTextField" destination="AiL-lw-IEa" id="oEq-6U-GO5"/>
+                        <outlet property="nicknameTextField" destination="AiL-lw-IEa" id="WEo-QL-gVL"/>
                         <outlet property="primarySwitch" destination="KId-Er-feL" id="fnA-Sk-xAb"/>
-                        <outlet property="typeTextField" destination="17e-5h-5vR" id="w4N-FV-KpH"/>
+                        <outlet property="styleTextField" destination="17e-5h-5vR" id="fwg-YJ-8jg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJV-5Y-sCW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

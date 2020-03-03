@@ -46,6 +46,11 @@ class ShoeListTableViewCell: UITableViewCell {
         return label
     }()
     
+    func configureWithShoe(shoe: Shoe) {
+        self.titleLabel.text = shoe.brand
+        self.milesLabel.text = "\(shoe.totalMiles) miles"
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.accessoryType = .disclosureIndicator
@@ -80,7 +85,5 @@ class ShoeListTableViewCell: UITableViewCell {
         self.stackView.addArrangedSubview(self.innerStackView)
         self.innerStackView.addArrangedSubview(self.titleLabel)
         self.innerStackView.addArrangedSubview(self.milesLabel)
-        self.titleLabel.text = "Nike Zoom"
-        self.milesLabel.text = "3.1 miles"
     }
 }

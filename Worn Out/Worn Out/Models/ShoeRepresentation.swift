@@ -13,7 +13,7 @@ struct ShoeRepresentation: Codable {
     let brand: String
     let style: String?
     let nickname: String
-    let maxMiles: Double
+    var maxMiles: Double
     let isPrimary: Bool
-    let totalMiles: Double
+    var totalMiles: Double
 }
