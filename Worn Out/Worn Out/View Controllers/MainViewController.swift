@@ -13,7 +13,7 @@ import CoreData
 class MainViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
     
-    private let healthKitController = HealthKitController()
+    private let healthKitController = HealthKitController() // run controller
     private let shoeController = ShoeController()
     
     lazy var fetchedResultController: NSFetchedResultsController<Shoe> = {
@@ -31,6 +31,22 @@ class MainViewController: UIViewController {
         try! frc.performFetch()
         return frc
     }() // to store the variable after it runs
+    
+    lazy var fetchedRunController: NSFetchedResultsController<Run> = {
+        // Fetch request
+        let fetchRequest: NSFetchRequest<Run> = Run.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "miles", ascending: true),
+            NSSortDescriptor(key: "startDate", ascending: false)
+        ]
+        
+        let moc = CoreDataStack.shared.mainContext
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+        frc.delegate = self
+        try! frc.performFetch()
+        return frc
+    }() // to store the variable after it runs
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +66,8 @@ class MainViewController: UIViewController {
                 self.healthKitController.sync()
             }
         }
+        
+        self.healthKitController.sync()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,7 +96,7 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 1
+            return self.fetchedRunController.fetchedObjects?.isEmpty == true ? 0 : 1
         case 1:
             return self.fetchedResultController.sections?.first?.numberOfObjects ?? 0
         default:
@@ -93,7 +111,14 @@ extension MainViewController: UITableViewDataSource {
                 SummaryTableViewCell else {
                     return UITableViewCell()
             }
+            if let run = self.fetchedRunController.fetchedObjects?.last {
+                cell.configureWithRun(run: run)
+            }
             
+            if let shoe = self.fetchedResultController.fetchedObjects?.first {
+                cell.configureWithShoe(shoe: shoe)
+            }
+
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ShoeCell", for: indexPath) as?
