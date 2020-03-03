@@ -8,11 +8,29 @@
 
 import UIKit
 import HealthKit
+import CoreData
 
 class MainViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
     
-    let healthKitController = HealthKitController()
+    private let healthKitController = HealthKitController()
+    private let shoeController = ShoeController()
+    
+    lazy var fetchedResultController: NSFetchedResultsController<Shoe> = {
+        // Fetch request
+        let fetchRequest: NSFetchRequest<Shoe> = Shoe.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "brand", ascending: true),
+            NSSortDescriptor(key: "nickname", ascending: true),
+            NSSortDescriptor(key: "totalMiles", ascending: true)
+        ]
+        
+        let moc = CoreDataStack.shared.mainContext
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+        frc.delegate = self
+        try! frc.performFetch()
+        return frc
+    }() // to store the variable after it runs
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +51,23 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddShoeSegue" {
+            guard let nc = segue.destination as? UINavigationController,
+                let addShoeVC = nc.topViewController as? AddShoeTableViewController else {
+                    return
+            }
+            
+            addShoeVC.shoeController = self.shoeController
+        }
+    }
 }
 
 extension MainViewController: UITableViewDataSource {
@@ -45,7 +80,7 @@ extension MainViewController: UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return 5
+            return self.fetchedResultController.sections?.first?.numberOfObjects ?? 0
         default:
             return 0
         }
@@ -65,6 +100,9 @@ extension MainViewController: UITableViewDataSource {
                 ShoeListTableViewCell else {
                     return UITableViewCell()
             }
+            let index = IndexPath(row: indexPath.row, section: 0)
+            let shoe = self.fetchedResultController.object(at: index)
+            cell.configureWithShoe(shoe: shoe)
             
             return cell
         default:
@@ -97,5 +135,11 @@ extension MainViewController: UITableViewDelegate {
 extension MainViewController: ShoeListHeaderViewDelegate {
     func addShoePressed() {
         self.performSegue(withIdentifier: "AddShoeSegue", sender: self)
+    }
+}
+
+extension MainViewController: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.reloadData()
     }
 }

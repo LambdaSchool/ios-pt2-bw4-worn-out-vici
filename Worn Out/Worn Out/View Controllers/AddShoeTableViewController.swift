@@ -10,8 +10,8 @@ import UIKit
 
 class AddShoeTableViewController: UITableViewController {
     @IBOutlet weak var brandTextField: UITextField!
-    @IBOutlet weak var typeTextField: UITextField!
-    @IBOutlet weak var nickNameTextField: UITextField!
+    @IBOutlet weak var styleTextField: UITextField!
+    @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var primarySwitch: UISwitch!
     @IBOutlet weak var maxMilesTextField: UITextField!
     
@@ -26,6 +26,7 @@ class AddShoeTableViewController: UITableViewController {
                   "Other"]
     
     var selectedBrand: String?
+    var shoeController: ShoeController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,19 @@ class AddShoeTableViewController: UITableViewController {
     }
     
     @IBAction func savePressed(_ sender: Any) {
+        guard let brand = self.brandTextField.text, !brand.isEmpty,
+            let style = self.styleTextField.text,
+            let nickname = self.nicknameTextField.text else {
+                let alert = UIAlertController(title: "Missing some fields", message: "Check your information and try again.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+        }
+        
+        let maxMilesDouble = self.maxMilesTextField.text.flatMap { Double($0) } ?? 350
+    
+        self.shoeController?.addShoe(brand: brand, style: style, nickname: nickname, maxMiles: maxMilesDouble, isPrimary: self.primarySwitch.isOn)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelPressed(_ sender: Any) {

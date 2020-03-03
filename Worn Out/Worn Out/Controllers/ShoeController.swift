@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import CoreData
 
 class ShoeController {
     private let context = CoreDataStack.shared.mainContext
     
-    func addShoe(for brand: String, style: String, nickname: String?, id: UUID, maxMiles: Double?, isPrimary: Bool, totalMiles: Double?) {
-        let _ = Shoe(brand: brand, nickname: nickname, maxMiles: maxMiles ?? 350.00, isPrimary: isPrimary, totalMiles: totalMiles ?? 0.0)
+    func addShoe(brand: String, style: String, nickname: String?, id: UUID = UUID(), maxMiles: Double, isPrimary: Bool, totalMiles: Double = 0) {
+        let _ = Shoe(brand: brand, nickname: nickname, maxMiles: maxMiles, isPrimary: isPrimary, totalMiles: totalMiles)
         
         do {
             try self.context.save()
