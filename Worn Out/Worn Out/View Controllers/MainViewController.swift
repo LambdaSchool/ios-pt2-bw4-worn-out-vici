@@ -121,11 +121,6 @@ extension MainViewController: UITableViewDataSource {
             if let run = self.fetchedRunsController.fetchedObjects?.last {
                 cell.configureWithRun(run: run)
             }
-            
-            // TODO: Create a logic for primary shoes
-            if let shoe = self.fetchedShoesController.fetchedObjects?.first {
-                cell.configureWithShoe(shoe: shoe)
-            }
 
             return cell
         case 1:

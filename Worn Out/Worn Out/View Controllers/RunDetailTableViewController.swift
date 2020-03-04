@@ -12,15 +12,12 @@ import CoreData
 final class RunDetailTableViewController: UITableViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var milesLabel: UILabel!
-    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var shoeTextField: UITextField!
     
-    var shoes: [String] = []
-    
-    var selectedShoe: String?
-    var run: Run?
-    
     private let context = CoreDataStack.shared.mainContext
+    var shoes: [Shoe] = []
+    var selectedShoe: Shoe?
+    var run: Run?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,30 +37,36 @@ final class RunDetailTableViewController: UITableViewController {
         let miles = self.run.map { String($0.miles) }
         self.milesLabel.text = miles
         
-        self.shoes = self.retrieveShoes()
+        self.shoes = retrieveShoes()
     }
     
-    private func retrieveShoes() -> [String] {
+    private func showSaveButton() {
+        let item = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(savePressed))
+        self.navigationItem.setRightBarButton(item, animated: true)
+    }
+    
+    private func retrieveShoes() -> [Shoe] {
         let fetchRequest: NSFetchRequest<Shoe> = Shoe.fetchRequest()
         
         do {
             let shoes = try self.context.fetch(fetchRequest)
-            var nicknames: [String] = []
             
-            for shoe in shoes {
-                if let nickname = shoe.nickname {
-                    nicknames.append(nickname)
-                }
-            }
-            
-            return nicknames
+            return shoes
         } catch let error as NSError {
             print("Could not fetch: \(error)")
             return []
         }
     }
     
-    @IBAction func savePressed(_ sender: Any) {
+    @objc func savePressed(_ sender: Any) {
+        self.run?.shoe = self.selectedShoe
+        do {
+            try self.context.save()
+        } catch {
+            print("Error saving managed object content: \(error)")
+        }
+        
+        navigationController?.popViewController(animated: true)
     }
     
     private func tapToDismiss() {
@@ -112,12 +115,18 @@ extension RunDetailTableViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.shoes[row]
+        return self.shoes[row].nickname
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            self.selectedShoe = self.shoes[row]
-        self.shoeTextField.text = self.selectedShoe
+        let newShoe = self.shoes[row]
+        
+        if self.selectedShoe != newShoe {
+            self.showSaveButton()
+        }
+        
+        self.selectedShoe = newShoe
+        self.shoeTextField.text = self.selectedShoe?.nickname
     }
 }
 

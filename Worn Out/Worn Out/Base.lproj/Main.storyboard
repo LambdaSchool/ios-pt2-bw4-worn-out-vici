@@ -195,16 +195,9 @@
                             <outlet property="delegate" destination="Y7X-bn-OjZ" id="UOD-wq-LA2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="m1f-os-aE3">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hfD-A1-BVY">
-                            <connections>
-                                <action selector="savePressed:" destination="Y7X-bn-OjZ" id="oxU-Ae-s8c"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="m1f-os-aE3"/>
                     <connections>
                         <outlet property="milesLabel" destination="OSP-i2-s18" id="0o8-LG-4GG"/>
-                        <outlet property="saveButton" destination="hfD-A1-BVY" id="mR2-mE-ew5"/>
                         <outlet property="shoeTextField" destination="6k4-wY-DYR" id="Op7-e4-B8z"/>
                         <outlet property="timeLabel" destination="KRz-v2-sDF" id="mDn-Gh-tGb"/>
                     </connections>
