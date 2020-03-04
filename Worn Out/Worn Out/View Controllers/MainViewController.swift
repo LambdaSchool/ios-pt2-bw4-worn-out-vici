@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     private let healthKitController = HealthKitController() // run controller
     private let shoeController = ShoeController()
     
-    lazy var fetchedResultController: NSFetchedResultsController<Shoe> = {
+    lazy var fetchedShoesController: NSFetchedResultsController<Shoe> = {
         // Fetch request
         let fetchRequest: NSFetchRequest<Shoe> = Shoe.fetchRequest()
         fetchRequest.sortDescriptors = [
@@ -32,7 +32,7 @@ class MainViewController: UIViewController {
         return frc
     }() // to store the variable after it runs
     
-    lazy var fetchedRunController: NSFetchedResultsController<Run> = {
+    lazy var fetchedRunsController: NSFetchedResultsController<Run> = {
         // Fetch request
         let fetchRequest: NSFetchRequest<Run> = Run.fetchRequest()
         fetchRequest.sortDescriptors = [
@@ -85,6 +85,12 @@ class MainViewController: UIViewController {
             
             addShoeVC.shoeController = self.shoeController
         }
+        
+        if segue.identifier == "RunDetailSegue" {
+            guard let runDetailVC = segue.destination as? RunDetailTableViewController else { return }
+            
+            runDetailVC.run =  self.fetchedRunsController.fetchedObjects?.last
+        }
     }
 }
 
@@ -96,9 +102,9 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return self.fetchedRunController.fetchedObjects?.isEmpty == true ? 0 : 1
+            return self.fetchedRunsController.fetchedObjects?.isEmpty == true ? 0 : 1
         case 1:
-            return self.fetchedResultController.sections?.first?.numberOfObjects ?? 0
+            return self.fetchedShoesController.sections?.first?.numberOfObjects ?? 0
         default:
             return 0
         }
@@ -111,11 +117,13 @@ extension MainViewController: UITableViewDataSource {
                 SummaryTableViewCell else {
                     return UITableViewCell()
             }
-            if let run = self.fetchedRunController.fetchedObjects?.last {
+            
+            if let run = self.fetchedRunsController.fetchedObjects?.last {
                 cell.configureWithRun(run: run)
             }
             
-            if let shoe = self.fetchedResultController.fetchedObjects?.first {
+            // TODO: Create a logic for primary shoes
+            if let shoe = self.fetchedShoesController.fetchedObjects?.first {
                 cell.configureWithShoe(shoe: shoe)
             }
 
@@ -126,7 +134,7 @@ extension MainViewController: UITableViewDataSource {
                     return UITableViewCell()
             }
             let index = IndexPath(row: indexPath.row, section: 0)
-            let shoe = self.fetchedResultController.object(at: index)
+            let shoe = self.fetchedShoesController.object(at: index)
             cell.configureWithShoe(shoe: shoe)
             
             return cell
@@ -154,7 +162,11 @@ extension MainViewController: UITableViewDataSource {
 }
 
 extension MainViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            self.performSegue(withIdentifier: "RunDetailSegue", sender: nil)
+        }
+    }
 }
 
 extension MainViewController: ShoeListHeaderViewDelegate {
