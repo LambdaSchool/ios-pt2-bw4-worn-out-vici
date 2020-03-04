@@ -1,14 +1,14 @@
 //
-//  ShoeListTableViewCell.swift
+//  RunListTableViewCell.swift
 //  Worn Out
 //
-//  Created by Vici Shaweddy on 3/1/20.
+//  Created by Vici Shaweddy on 3/4/20.
 //  Copyright © 2020 Vici Shaweddy. All rights reserved.
 //
 
 import UIKit
 
-class ShoeListTableViewCell: UITableViewCell {
+class RunListTableViewCell: UITableViewCell {
     private lazy var stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .horizontal
@@ -19,53 +19,39 @@ class ShoeListTableViewCell: UITableViewCell {
         return view
     }()
     
-    private lazy var iconImage: UIImageView = {
-        let view = UIImageView()
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 20
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     private lazy var innerStackView: UIStackView = {
         let view = UIStackView()
-        view.axis = .vertical
+        view.axis = .horizontal
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
+    private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private lazy var subtitleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .caption1)
-        label.textColor = .gray
         return label
     }()
     
     private lazy var milesLabel: UILabel = {
         let label = UILabel()
-        label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    func configureWithShoe(shoe: Shoe) {
-        self.titleLabel.text = shoe.nickname
-        self.subtitleLabel.text = shoe.brand
-        self.milesLabel.text = "\(shoe.totalMiles) miles"
+    func configureWithRun(run: Run) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        
+        let date = run.startDate.map { dateFormatter.string(from: $0) }
+        self.dateLabel.text = date
+        
+        self.milesLabel.text = "\(run.miles) miles"
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.accessoryType = .disclosureIndicator
         self.setupStackView()
-        self.setupIconImage()
         self.setupInnerStackView()
     }
     
@@ -83,18 +69,10 @@ class ShoeListTableViewCell: UITableViewCell {
         ])
     }
     
-    private func setupIconImage() {
-        self.stackView.addArrangedSubview(self.iconImage)
-        NSLayoutConstraint.activate([
-            self.iconImage.heightAnchor.constraint(equalToConstant: 40),
-            self.iconImage.widthAnchor.constraint(equalTo: self.iconImage.heightAnchor),
-        ])
-    }
-    
     private func setupInnerStackView() {
         self.stackView.addArrangedSubview(self.innerStackView)
-        self.innerStackView.addArrangedSubview(self.titleLabel)
-        self.innerStackView.addArrangedSubview(self.subtitleLabel)
-        self.stackView.addArrangedSubview(self.milesLabel)
+        self.innerStackView.addArrangedSubview(self.dateLabel)
+        self.innerStackView.addArrangedSubview(self.milesLabel)
     }
+
 }
