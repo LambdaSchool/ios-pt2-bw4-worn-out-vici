@@ -29,7 +29,7 @@ class ShoeListTableViewCell: UITableViewCell {
     
     private lazy var innerStackView: UIStackView = {
         let view = UIStackView()
-        view.axis = .horizontal
+        view.axis = .vertical
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -40,14 +40,24 @@ class ShoeListTableViewCell: UITableViewCell {
         return label
     }()
     
+    private lazy var subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .preferredFont(forTextStyle: .caption1)
+        label.textColor = .gray
+        return label
+    }()
+    
     private lazy var milesLabel: UILabel = {
         let label = UILabel()
+        label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     func configureWithShoe(shoe: Shoe) {
-        self.titleLabel.text = shoe.brand
+        self.titleLabel.text = shoe.nickname
+        self.subtitleLabel.text = shoe.brand
         self.milesLabel.text = "\(shoe.totalMiles) miles"
     }
     
@@ -84,6 +94,7 @@ class ShoeListTableViewCell: UITableViewCell {
     private func setupInnerStackView() {
         self.stackView.addArrangedSubview(self.innerStackView)
         self.innerStackView.addArrangedSubview(self.titleLabel)
-        self.innerStackView.addArrangedSubview(self.milesLabel)
+        self.innerStackView.addArrangedSubview(self.subtitleLabel)
+        self.stackView.addArrangedSubview(self.milesLabel)
     }
 }

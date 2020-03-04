@@ -38,7 +38,7 @@ class AddShoeTableViewController: UITableViewController {
     @IBAction func savePressed(_ sender: Any) {
         guard let brand = self.brandTextField.text, !brand.isEmpty,
             let style = self.styleTextField.text,
-            let nickname = self.nicknameTextField.text else {
+            let nickname = self.nicknameTextField.text, !nickname.isEmpty else {
                 let alert = UIAlertController(title: "Missing some fields", message: "Check your information and try again.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
@@ -65,7 +65,7 @@ class AddShoeTableViewController: UITableViewController {
         let brandPicker = UIPickerView()
         brandPicker.delegate = self
         
-        brandTextField.inputView = brandPicker
+        self.brandTextField.inputView = brandPicker
     }
     
     private func createToolbar() {
