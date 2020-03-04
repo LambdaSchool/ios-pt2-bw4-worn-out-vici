@@ -24,12 +24,8 @@ class SummaryTableViewCell: UITableViewCell {
     
     func configureWithRun(run: Run) {
         self.totalMilesLabel.text = String(run.miles)
+        self.nicknameLabel.text = run.shoe?.nickname
+        self.brandLabel.text = run.shoe?.brand
 //        self.timeLabel.text = run.startDate
     }
-    
-    func configureWithShoe(shoe: Shoe) {
-        self.nicknameLabel.text = shoe.nickname
-        self.brandLabel.text = shoe.brand
-    }
-
 }
