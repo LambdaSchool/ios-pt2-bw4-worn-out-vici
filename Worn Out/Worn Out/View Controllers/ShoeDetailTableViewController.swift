@@ -35,7 +35,9 @@ class ShoeDetailTableViewController: UITableViewController {
     }
     
     private func updateViews() {
-//        self.totalMiles.text = self.shoe?.totalMiles
+        let miles = self.shoe.map { String($0.calculateTotalMiles()) }
+        
+        self.totalMiles.text = miles
         self.nicknameLabel.text = self.shoe?.nickname
         self.brandLabel.text = self.shoe?.brand
     }
