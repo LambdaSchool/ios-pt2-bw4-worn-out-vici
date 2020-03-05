@@ -47,24 +47,4 @@ class ShoeController {
             print("Error saving managed object context: \(error)")
         }
     }
-    
-    func totalMiles(for shoe: Shoe) -> Double {
-        // get the current miles from the shoe
-        // let currentMiles = shoe.totalMiles
-        
-        // get the current miles from the run
-        // var totalMiles: Double = 0
-        //        for run in shoe.runs {
-        //          totalMiles += run.miles
-        //        }
-            
-        // code above is the same like below
-        let runs = shoe.runs?.array as? [Run] // cast it from NSOrderedSet to [Run]
-        let totalMiles = runs?.reduce(0) { curr, next in
-            curr + next.miles
-        }
-        
-        // total the miles
-        return totalMiles ?? 0
-    }
 }
