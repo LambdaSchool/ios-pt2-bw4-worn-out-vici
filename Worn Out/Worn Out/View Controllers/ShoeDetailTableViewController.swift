@@ -26,8 +26,6 @@ class ShoeDetailTableViewController: UITableViewController {
         self.tableView.delegate = self
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 60
-        self.tableView.register(RunListTableViewCell.self, forCellReuseIdentifier: "RunCell")
-        
         self.tableView.register(RunListHeaderView.self, forHeaderFooterViewReuseIdentifier:"RunListHeader")
     }
     
@@ -78,12 +76,20 @@ class ShoeDetailTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RunCell", for: indexPath) as? RunListTableViewCell else { return UITableViewCell() }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RunCell", for: indexPath)
         
         let runs = self.shoe?.runs?.array as? [Run]
         
         if let run = runs?[indexPath.row] {
-            cell.configureWithRun(run: run)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
+            
+            let date = run.startDate.map { dateFormatter.string(from: $0) }
+
+            let miles = String(run.miles)
+            
+            cell.textLabel?.text = date
+            cell.detailTextLabel?.text = "\(miles) miles"
         }
         
         return cell
