@@ -32,12 +32,23 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zed-kM-E9V" userLabel="Run Stack View">
                                                             <rect key="frame" x="0.0" y="0.0" width="342" height="62"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5c-Oc-ps6">
-                                                                    <rect key="frame" x="0.0" y="22.5" width="294" height="17"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FZu-2N-SqJ">
+                                                                    <rect key="frame" x="0.0" y="8.5" width="294" height="45.5"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LATEST RUN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eje-9L-2M2">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="294" height="20.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5c-Oc-ps6">
+                                                                            <rect key="frame" x="0.0" y="28.5" width="294" height="17"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="S72-he-Yzz">
                                                                     <rect key="frame" x="302" y="0.5" width="40" height="61.5"/>
                                                                     <subviews>
@@ -63,6 +74,9 @@
                                                                     </constraints>
                                                                 </stackView>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="FZu-2N-SqJ" firstAttribute="height" secondItem="S72-he-Yzz" secondAttribute="height" multiplier="0.739837" id="JHH-ob-WGL"/>
+                                                            </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MUw-Dl-kZ2" userLabel="Shoe Stack View">
                                                             <rect key="frame" x="0.0" y="92" width="342" height="43.5"/>
@@ -101,9 +115,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="brandLabel" destination="TZg-V0-xjk" id="swd-l4-wlj"/>
+                                            <outlet property="milesLabel" destination="8We-SQ-WRW" id="8d7-s5-RwY"/>
                                             <outlet property="nicknameLabel" destination="2EU-85-iCW" id="0Uc-Ve-oiH"/>
                                             <outlet property="timeLabel" destination="D5c-Oc-ps6" id="816-x9-0Fk"/>
-                                            <outlet property="totalMilesLabel" destination="8We-SQ-WRW" id="Vkc-89-FXP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -600,6 +614,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bZF-fj-uBx"/>
+        <segue reference="Vf0-r1-P14"/>
     </inferredMetricsTieBreakers>
 </document>
