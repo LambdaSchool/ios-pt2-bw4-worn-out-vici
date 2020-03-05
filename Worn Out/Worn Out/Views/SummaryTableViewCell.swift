@@ -13,6 +13,7 @@ class SummaryTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var brandLabel: UILabel!
+    @IBOutlet weak var totalMilesLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +27,10 @@ class SummaryTableViewCell: UITableViewCell {
         self.milesLabel.text = String(run.miles)
         self.nicknameLabel.text = run.shoe?.nickname
         self.brandLabel.text = run.shoe?.brand
+        
+        let miles = run.shoe.map { String($0.calculateTotalMiles()) }
+        
+        self.totalMilesLabel.text = miles
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
