@@ -497,6 +497,7 @@
                         <outlet property="nicknameLabel" destination="2so-66-5JL" id="Xpt-8x-bZN"/>
                         <outlet property="totalMiles" destination="Lsr-Mx-i8F" id="sq3-1Z-eT1"/>
                         <segue destination="poS-CS-GAY" kind="show" identifier="AddRunsSegue" id="Fpp-lu-Xrj"/>
+                        <segue destination="Y7X-bn-OjZ" kind="show" identifier="RunDetailSegue" id="Vf0-r1-P14"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wlj-pf-Ufq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -557,4 +558,7 @@
             <point key="canvasLocation" x="1000" y="867"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Vf0-r1-P14"/>
+    </inferredMetricsTieBreakers>
 </document>

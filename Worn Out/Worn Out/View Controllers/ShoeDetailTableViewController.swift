@@ -55,6 +55,16 @@ class ShoeDetailTableViewController: UITableViewController {
             
             addRunsVC.shoe = self.shoe
         }
+        
+        if segue.identifier == "RunDetailSegue" {
+            guard let runDetailVC = segue.destination as? RunDetailTableViewController else { return }
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow,
+                let runs = self.shoe?.runs?.array as? [Run]
+            {
+                runDetailVC.run = runs[indexPath.row]
+            }
+        }
     }
     
     // MARK: - Table view data source
@@ -87,6 +97,10 @@ class ShoeDetailTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "RunDetailSegue", sender: nil)
     }
 }
 
