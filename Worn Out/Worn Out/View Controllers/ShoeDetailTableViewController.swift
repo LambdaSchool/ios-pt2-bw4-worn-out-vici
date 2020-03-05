@@ -24,12 +24,10 @@ class ShoeDetailTableViewController: UITableViewController {
         self.updateViews()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 60
         self.tableView.register(RunListHeaderView.self, forHeaderFooterViewReuseIdentifier:"RunListHeader")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.reloadShoe()
