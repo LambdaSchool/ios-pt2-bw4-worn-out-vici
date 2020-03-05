@@ -108,13 +108,14 @@
                         <outlet property="tableView" destination="7Gw-VS-04X" id="WKv-P4-mWa"/>
                         <segue destination="Ra7-fB-dQo" kind="show" identifier="AddShoeSegue" id="r6o-bu-aac"/>
                         <segue destination="Y7X-bn-OjZ" kind="show" identifier="RunDetailSegue" id="bZF-fj-uBx"/>
+                        <segue destination="LYT-T6-uxH" kind="show" identifier="ShoeDetailSegue" id="Ve1-Nw-u0R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
         </scene>
-        <!--Run Detail Table View Controller-->
+        <!--Run-->
         <scene sceneID="GvY-pv-wQs">
             <objects>
                 <tableViewController id="Y7X-bn-OjZ" customClass="RunDetailTableViewController" customModule="Worn_Out" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,7 +173,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Marathon Shoe" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6k4-wY-DYR">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="[Default Shoe]" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6k4-wY-DYR">
                                                     <rect key="frame" x="79.5" y="13.5" width="274.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -195,7 +196,7 @@
                             <outlet property="delegate" destination="Y7X-bn-OjZ" id="UOD-wq-LA2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="m1f-os-aE3"/>
+                    <navigationItem key="navigationItem" title="Run" largeTitleDisplayMode="never" id="m1f-os-aE3"/>
                     <connections>
                         <outlet property="milesLabel" destination="OSP-i2-s18" id="0o8-LG-4GG"/>
                         <outlet property="shoeTextField" destination="6k4-wY-DYR" id="Op7-e4-B8z"/>
@@ -428,7 +429,7 @@
             </objects>
             <point key="canvasLocation" x="1861" y="139"/>
         </scene>
-        <!--Shoe Detail Table View Controller-->
+        <!--Shoes-->
         <scene sceneID="SG1-Jh-ual">
             <objects>
                 <tableViewController id="LYT-T6-uxH" customClass="ShoeDetailTableViewController" customModule="Worn_Out" customModuleProvider="target" sceneMemberID="viewController">
@@ -484,312 +485,76 @@
                                 <constraint firstAttribute="trailing" secondItem="jyk-7o-lLN" secondAttribute="trailing" constant="20" id="zL1-w5-KWQ"/>
                             </constraints>
                         </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RunCell" id="TTD-6o-sG8">
-                                <rect key="frame" x="20" y="469.5" width="374" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TTD-6o-sG8" id="RmN-kz-9CM">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olj-pi-IQd" userLabel="Date">
-                                            <rect key="frame" x="20" y="12" width="36" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0N-fO-lOs" userLabel="Miles">
-                                            <rect key="frame" x="20" y="12" width="334" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="olj-pi-IQd" firstAttribute="centerY" secondItem="RmN-kz-9CM" secondAttribute="centerY" id="3Ye-QH-xho"/>
-                                        <constraint firstAttribute="trailing" secondItem="j0N-fO-lOs" secondAttribute="trailing" constant="20" id="H3n-tM-iBc"/>
-                                        <constraint firstItem="j0N-fO-lOs" firstAttribute="leading" secondItem="olj-pi-IQd" secondAttribute="leading" id="HbK-Nj-iB4"/>
-                                        <constraint firstItem="olj-pi-IQd" firstAttribute="leading" secondItem="RmN-kz-9CM" secondAttribute="leading" constant="20" id="MEt-gV-9Kk"/>
-                                        <constraint firstItem="j0N-fO-lOs" firstAttribute="centerY" secondItem="RmN-kz-9CM" secondAttribute="centerY" id="bo7-si-byZ"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RunCell" id="OMO-Y2-SQA">
-                                <rect key="frame" x="20" y="513.5" width="374" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OMO-Y2-SQA" id="Mn0-DD-JbQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3f-Bb-dZg" userLabel="Date">
-                                            <rect key="frame" x="20" y="12" width="36" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjs-Cd-Hwb" userLabel="Miles">
-                                            <rect key="frame" x="20" y="12" width="334" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="m3f-Bb-dZg" firstAttribute="centerY" secondItem="Mn0-DD-JbQ" secondAttribute="centerY" id="7bt-bi-jZ0"/>
-                                        <constraint firstItem="Zjs-Cd-Hwb" firstAttribute="leading" secondItem="m3f-Bb-dZg" secondAttribute="leading" id="H0m-0w-bJU"/>
-                                        <constraint firstItem="Zjs-Cd-Hwb" firstAttribute="centerY" secondItem="Mn0-DD-JbQ" secondAttribute="centerY" id="LcY-5p-0es"/>
-                                        <constraint firstAttribute="trailing" secondItem="Zjs-Cd-Hwb" secondAttribute="trailing" constant="20" id="OkE-lP-nH0"/>
-                                        <constraint firstItem="m3f-Bb-dZg" firstAttribute="leading" secondItem="Mn0-DD-JbQ" secondAttribute="leading" constant="20" id="vPS-uA-gvl"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RunCell" id="pvJ-l6-cYw">
-                                <rect key="frame" x="20" y="557.5" width="374" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pvJ-l6-cYw" id="PDl-Ku-C2w">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzn-Mh-Jak" userLabel="Date">
-                                            <rect key="frame" x="20" y="12" width="36" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yva-y3-0aC" userLabel="Miles">
-                                            <rect key="frame" x="20" y="12" width="334" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Qzn-Mh-Jak" firstAttribute="leading" secondItem="PDl-Ku-C2w" secondAttribute="leading" constant="20" id="A15-OO-LXO"/>
-                                        <constraint firstItem="Qzn-Mh-Jak" firstAttribute="centerY" secondItem="PDl-Ku-C2w" secondAttribute="centerY" id="P9z-wG-9if"/>
-                                        <constraint firstAttribute="trailing" secondItem="yva-y3-0aC" secondAttribute="trailing" constant="20" id="Tvt-bR-BwI"/>
-                                        <constraint firstItem="yva-y3-0aC" firstAttribute="centerY" secondItem="PDl-Ku-C2w" secondAttribute="centerY" id="YFO-jg-jEC"/>
-                                        <constraint firstItem="yva-y3-0aC" firstAttribute="leading" secondItem="Qzn-Mh-Jak" secondAttribute="leading" id="upD-nv-HNG"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RunCell" id="sfB-XK-wTK">
-                                <rect key="frame" x="20" y="601.5" width="374" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sfB-XK-wTK" id="872-Wq-ZQ1">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PK-id-l6b" userLabel="Date">
-                                            <rect key="frame" x="20" y="12" width="36" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ic1-Bu-7tL" userLabel="Miles">
-                                            <rect key="frame" x="20" y="12" width="334" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="8PK-id-l6b" firstAttribute="centerY" secondItem="872-Wq-ZQ1" secondAttribute="centerY" id="NYW-B1-ILZ"/>
-                                        <constraint firstItem="Ic1-Bu-7tL" firstAttribute="leading" secondItem="8PK-id-l6b" secondAttribute="leading" id="byD-1z-uKO"/>
-                                        <constraint firstItem="8PK-id-l6b" firstAttribute="leading" secondItem="872-Wq-ZQ1" secondAttribute="leading" constant="20" id="c23-qd-Pcd"/>
-                                        <constraint firstItem="Ic1-Bu-7tL" firstAttribute="centerY" secondItem="872-Wq-ZQ1" secondAttribute="centerY" id="daE-v9-w0U"/>
-                                        <constraint firstAttribute="trailing" secondItem="Ic1-Bu-7tL" secondAttribute="trailing" constant="20" id="fq7-83-gOK"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RunCell" id="3JE-UK-mgH">
-                                <rect key="frame" x="20" y="645.5" width="374" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3JE-UK-mgH" id="IaK-1T-vYM">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNe-zy-biw" userLabel="Date">
-                                            <rect key="frame" x="20" y="12" width="36" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hqk-IM-0wo" userLabel="Miles">
-                                            <rect key="frame" x="20" y="12" width="334" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Hqk-IM-0wo" firstAttribute="centerY" secondItem="IaK-1T-vYM" secondAttribute="centerY" id="9ii-sV-jEu"/>
-                                        <constraint firstAttribute="trailing" secondItem="Hqk-IM-0wo" secondAttribute="trailing" constant="20" id="CwY-tG-Ahh"/>
-                                        <constraint firstItem="nNe-zy-biw" firstAttribute="centerY" secondItem="IaK-1T-vYM" secondAttribute="centerY" id="LPN-Mo-ObK"/>
-                                        <constraint firstItem="Hqk-IM-0wo" firstAttribute="leading" secondItem="nNe-zy-biw" secondAttribute="leading" id="U6k-rg-mjy"/>
-                                        <constraint firstItem="nNe-zy-biw" firstAttribute="leading" secondItem="IaK-1T-vYM" secondAttribute="leading" constant="20" id="eYM-6B-6mL"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RunCell" id="Fhe-bZ-9pn">
-                                <rect key="frame" x="20" y="689.5" width="374" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fhe-bZ-9pn" id="e0B-jU-mzP">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVc-ay-Ec6" userLabel="Date">
-                                            <rect key="frame" x="20" y="12" width="36" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOk-pP-Use" userLabel="Miles">
-                                            <rect key="frame" x="20" y="12" width="334" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="hOk-pP-Use" firstAttribute="leading" secondItem="IVc-ay-Ec6" secondAttribute="leading" id="7WJ-rf-q8l"/>
-                                        <constraint firstItem="IVc-ay-Ec6" firstAttribute="centerY" secondItem="e0B-jU-mzP" secondAttribute="centerY" id="7dk-6E-1a5"/>
-                                        <constraint firstAttribute="trailing" secondItem="hOk-pP-Use" secondAttribute="trailing" constant="20" id="NUC-Vg-5P3"/>
-                                        <constraint firstItem="hOk-pP-Use" firstAttribute="centerY" secondItem="e0B-jU-mzP" secondAttribute="centerY" id="VVN-ju-aKI"/>
-                                        <constraint firstItem="IVc-ay-Ec6" firstAttribute="leading" secondItem="e0B-jU-mzP" secondAttribute="leading" constant="20" id="qzq-w9-APU"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RunCell" id="fER-vJ-Cm2">
-                                <rect key="frame" x="20" y="733.5" width="374" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fER-vJ-Cm2" id="kzu-ZS-l3R">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufv-gd-oZT" userLabel="Date">
-                                            <rect key="frame" x="20" y="12" width="36" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cv-Cx-E2W" userLabel="Miles">
-                                            <rect key="frame" x="20" y="12" width="334" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="1cv-Cx-E2W" firstAttribute="centerY" secondItem="kzu-ZS-l3R" secondAttribute="centerY" id="D8v-3F-3uC"/>
-                                        <constraint firstItem="1cv-Cx-E2W" firstAttribute="leading" secondItem="Ufv-gd-oZT" secondAttribute="leading" id="DLH-75-0jy"/>
-                                        <constraint firstItem="Ufv-gd-oZT" firstAttribute="centerY" secondItem="kzu-ZS-l3R" secondAttribute="centerY" id="QOe-g0-o4w"/>
-                                        <constraint firstItem="Ufv-gd-oZT" firstAttribute="leading" secondItem="kzu-ZS-l3R" secondAttribute="leading" constant="20" id="bUj-sm-n9B"/>
-                                        <constraint firstAttribute="trailing" secondItem="1cv-Cx-E2W" secondAttribute="trailing" constant="20" id="jep-Uf-KHd"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RunCell" id="34r-A8-JPM">
-                                <rect key="frame" x="20" y="777.5" width="374" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="34r-A8-JPM" id="nSc-Sz-qGX">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvG-93-a3b" userLabel="Date">
-                                            <rect key="frame" x="20" y="12" width="36" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dna-hF-vCh" userLabel="Miles">
-                                            <rect key="frame" x="20" y="12" width="334" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Dna-hF-vCh" firstAttribute="leading" secondItem="pvG-93-a3b" secondAttribute="leading" id="3Ok-mQ-iMW"/>
-                                        <constraint firstItem="Dna-hF-vCh" firstAttribute="centerY" secondItem="nSc-Sz-qGX" secondAttribute="centerY" id="IBb-pg-PgI"/>
-                                        <constraint firstAttribute="trailing" secondItem="Dna-hF-vCh" secondAttribute="trailing" constant="20" id="Jhs-eT-oGj"/>
-                                        <constraint firstItem="pvG-93-a3b" firstAttribute="centerY" secondItem="nSc-Sz-qGX" secondAttribute="centerY" id="cdA-QR-Ove"/>
-                                        <constraint firstItem="pvG-93-a3b" firstAttribute="leading" secondItem="nSc-Sz-qGX" secondAttribute="leading" constant="20" id="ybb-u9-siD"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RunCell" id="XsP-ft-VTj">
-                                <rect key="frame" x="20" y="821.5" width="374" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XsP-ft-VTj" id="yK0-Ts-baA">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNe-cZ-tlE" userLabel="Date">
-                                            <rect key="frame" x="20" y="12" width="36" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOy-nG-lXj" userLabel="Miles">
-                                            <rect key="frame" x="20" y="12" width="334" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="xOy-nG-lXj" secondAttribute="trailing" constant="20" id="6jm-E8-I8u"/>
-                                        <constraint firstItem="xOy-nG-lXj" firstAttribute="centerY" secondItem="yK0-Ts-baA" secondAttribute="centerY" id="8uJ-Pq-egg"/>
-                                        <constraint firstItem="zNe-cZ-tlE" firstAttribute="centerY" secondItem="yK0-Ts-baA" secondAttribute="centerY" id="N4W-3U-EsU"/>
-                                        <constraint firstItem="zNe-cZ-tlE" firstAttribute="leading" secondItem="yK0-Ts-baA" secondAttribute="leading" constant="20" id="qB4-yt-rH5"/>
-                                        <constraint firstItem="xOy-nG-lXj" firstAttribute="leading" secondItem="zNe-cZ-tlE" secondAttribute="leading" id="yNt-eC-mYO"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RunCell" id="UvS-WC-4A1">
-                                <rect key="frame" x="20" y="865.5" width="374" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UvS-WC-4A1" id="uER-6e-DoX">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGW-1g-nUb" userLabel="Date">
-                                            <rect key="frame" x="20" y="12" width="36" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mmc-BR-fYe" userLabel="Miles">
-                                            <rect key="frame" x="20" y="12" width="334" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="RGW-1g-nUb" firstAttribute="centerY" secondItem="uER-6e-DoX" secondAttribute="centerY" id="5E7-Fg-z1F"/>
-                                        <constraint firstItem="Mmc-BR-fYe" firstAttribute="leading" secondItem="RGW-1g-nUb" secondAttribute="leading" id="MQm-ta-EQf"/>
-                                        <constraint firstAttribute="trailing" secondItem="Mmc-BR-fYe" secondAttribute="trailing" constant="20" id="RVB-q4-3sY"/>
-                                        <constraint firstItem="Mmc-BR-fYe" firstAttribute="centerY" secondItem="uER-6e-DoX" secondAttribute="centerY" id="Y0t-0o-IY7"/>
-                                        <constraint firstItem="RGW-1g-nUb" firstAttribute="leading" secondItem="uER-6e-DoX" secondAttribute="leading" constant="20" id="j32-NF-hX8"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <sections/>
                         <connections>
                             <outlet property="dataSource" destination="LYT-T6-uxH" id="8nv-iN-mXX"/>
                             <outlet property="delegate" destination="LYT-T6-uxH" id="7Kn-el-MJn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="I1g-BO-rc9"/>
+                    <navigationItem key="navigationItem" title="Shoes" largeTitleDisplayMode="never" id="I1g-BO-rc9"/>
                     <connections>
-                        <outlet property="milesLabel" destination="Lsr-Mx-i8F" id="1SS-vb-BBk"/>
+                        <outlet property="brandLabel" destination="H03-4Q-afg" id="qic-wo-lZd"/>
+                        <outlet property="nicknameLabel" destination="2so-66-5JL" id="Xpt-8x-bZN"/>
+                        <outlet property="totalMiles" destination="Lsr-Mx-i8F" id="sq3-1Z-eT1"/>
+                        <segue destination="poS-CS-GAY" kind="show" identifier="AddRunsSegue" id="Fpp-lu-Xrj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wlj-pf-Ufq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1435" y="867"/>
+            <point key="canvasLocation" x="93" y="867"/>
+        </scene>
+        <!--Run History-->
+        <scene sceneID="tES-bs-SCr">
+            <objects>
+                <tableViewController id="poS-CS-GAY" customClass="RunHistoryTableViewController" customModule="Worn_Out" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="g0e-dm-T7x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RunCell" textLabel="Fhz-uT-UY2" detailTextLabel="tnz-ll-PbO" style="IBUITableViewCellStyleValue1" id="ai4-kC-pHh">
+                                <rect key="frame" x="20" y="55.5" width="374" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ai4-kC-pHh" id="fD1-VT-Ytl">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fhz-uT-UY2">
+                                            <rect key="frame" x="20" y="12" width="36" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tnz-ll-PbO">
+                                            <rect key="frame" x="314" y="12" width="40" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="poS-CS-GAY" id="VTf-ZY-kTO"/>
+                            <outlet property="delegate" destination="poS-CS-GAY" id="mbP-ZI-TjI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Run History" id="IQz-mm-o7n">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Pzy-ZV-Wzg">
+                            <connections>
+                                <action selector="savePressed:" destination="poS-CS-GAY" id="wGH-qs-Hij"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="Pzy-ZV-Wzg" id="p8S-er-KH0"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7JO-lo-TZF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="867"/>
         </scene>
     </scenes>
 </document>

@@ -40,7 +40,7 @@ class RunListTableViewCell: UITableViewCell {
     
     func configureWithRun(run: Run) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy"
+        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
         
         let date = run.startDate.map { dateFormatter.string(from: $0) }
         self.dateLabel.text = date

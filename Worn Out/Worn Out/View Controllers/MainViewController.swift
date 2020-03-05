@@ -46,7 +46,6 @@ class MainViewController: UIViewController {
         try! frc.performFetch()
         return frc
     }() // to store the variable after it runs
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +89,14 @@ class MainViewController: UIViewController {
             guard let runDetailVC = segue.destination as? RunDetailTableViewController else { return }
             
             runDetailVC.run =  self.fetchedRunsController.fetchedObjects?.last
+        }
+        
+        if segue.identifier == "ShoeDetailSegue" {
+            guard let shoeDetailVC = segue.destination as? ShoeDetailTableViewController else { return }
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                shoeDetailVC.shoe = self.fetchedShoesController.fetchedObjects?[indexPath.row]
+            }
         }
     }
 }
@@ -160,6 +167,10 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 && indexPath.row == 0 {
             self.performSegue(withIdentifier: "RunDetailSegue", sender: nil)
+        }
+        
+        if indexPath.section == 1 {
+            self.performSegue(withIdentifier: "ShoeDetailSegue", sender: nil)
         }
     }
 }
