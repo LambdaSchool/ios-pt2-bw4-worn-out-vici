@@ -48,6 +48,7 @@ class HealthKitController {
                 let run = Run(context: self.context)
                 run.workoutIdentifier = workout.uuid
                 run.miles = workout.totalDistance?.doubleValue(for: .mile()) ?? 0
+                run.startDate = workout.startDate
             }
             
             // delete a run
@@ -65,6 +66,7 @@ class HealthKitController {
                 guard let uuid = run.workoutIdentifier else { continue }
                 let workout = workoutDictionary[uuid]
                 run.miles = workout?.totalDistance?.doubleValue(for: .mile()) ?? 0
+                run.startDate = workout?.startDate
             }
             
             do {
