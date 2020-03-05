@@ -97,4 +97,6 @@ class ShoeListTableViewCell: UITableViewCell {
         self.innerStackView.addArrangedSubview(self.subtitleLabel)
         self.stackView.addArrangedSubview(self.milesLabel)
     }
+    
+    
 }
