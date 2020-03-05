@@ -261,7 +261,7 @@
                             <outlet property="delegate" destination="Y7X-bn-OjZ" id="UOD-wq-LA2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Run" largeTitleDisplayMode="never" id="m1f-os-aE3"/>
+                    <navigationItem key="navigationItem" title="Run" id="m1f-os-aE3"/>
                     <connections>
                         <outlet property="milesLabel" destination="OSP-i2-s18" id="0o8-LG-4GG"/>
                         <outlet property="shoeTextField" destination="6k4-wY-DYR" id="Op7-e4-B8z"/>
@@ -582,7 +582,7 @@
                             <outlet property="delegate" destination="LYT-T6-uxH" id="7Kn-el-MJn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Shoes" largeTitleDisplayMode="never" id="I1g-BO-rc9"/>
+                    <navigationItem key="navigationItem" title="Shoes" id="I1g-BO-rc9"/>
                     <connections>
                         <outlet property="brandLabel" destination="H03-4Q-afg" id="qic-wo-lZd"/>
                         <outlet property="nicknameLabel" destination="2so-66-5JL" id="Xpt-8x-bZN"/>
@@ -650,6 +650,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bZF-fj-uBx"/>
+        <segue reference="Vf0-r1-P14"/>
     </inferredMetricsTieBreakers>
 </document>
