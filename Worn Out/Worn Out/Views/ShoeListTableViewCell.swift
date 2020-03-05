@@ -21,7 +21,7 @@ class ShoeListTableViewCell: UITableViewCell {
     
     private lazy var iconImage: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .blue
+        view.backgroundColor = UIColor(red: 255/255, green: 129/255, blue: 209/255, alpha: 1)
         view.layer.cornerRadius = 20
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
