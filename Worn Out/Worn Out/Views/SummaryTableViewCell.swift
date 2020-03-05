@@ -26,6 +26,11 @@ class SummaryTableViewCell: UITableViewCell {
         self.totalMilesLabel.text = String(run.miles)
         self.nicknameLabel.text = run.shoe?.nickname
         self.brandLabel.text = run.shoe?.brand
-//        self.timeLabel.text = run.startDate
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
+        
+        let date = run.startDate.map { dateFormatter.string(from: $0) }
+        self.timeLabel.text = date
     }
 }
