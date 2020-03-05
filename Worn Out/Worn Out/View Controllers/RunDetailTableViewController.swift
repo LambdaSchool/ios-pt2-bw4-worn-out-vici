@@ -38,6 +38,7 @@ final class RunDetailTableViewController: UITableViewController {
         self.milesLabel.text = miles
         
         self.shoes = retrieveShoes()
+        self.shoeTextField.text = self.run?.shoe?.nickname
     }
     
     private func showSaveButton() {
