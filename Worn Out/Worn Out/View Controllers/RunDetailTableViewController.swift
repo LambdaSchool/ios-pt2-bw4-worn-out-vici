@@ -10,21 +10,45 @@ import UIKit
 import CoreData
 
 final class RunDetailTableViewController: UITableViewController {
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var milesLabel: UILabel!
-    @IBOutlet weak var shoeTextField: UITextField!
+    @IBOutlet private weak var timeLabel: UILabel!
+    @IBOutlet private weak var milesLabel: UILabel!
     
     private let context = CoreDataStack.shared.mainContext
+    
+    private lazy var shoePicker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.delegate = self
+        return picker
+    }()
+    
+    private lazy var toolBar: UIToolbar = {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        // Creating flexible space
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        // Creating Done button
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.dismissKeyboard))
+        
+        // Adding space and button to toolbar
+        toolBar.setItems([flexibleSpace,doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        return toolBar
+    }()
+    
+    private var shoeTextField: UITextField?
+    
     var shoes: [Shoe] = []
     var selectedShoe: Shoe?
     var run: Run?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.selectShoePicker()
-        self.createToolbar()
         self.tapToDismiss()
         self.updateViews()
+        
+        self.tableView.register(ShoeSelectionHeaderView.self, forHeaderFooterViewReuseIdentifier: "ShoeSelectionHeader")
     }
     
     private func updateViews() {
@@ -38,7 +62,6 @@ final class RunDetailTableViewController: UITableViewController {
         self.milesLabel.text = miles
         
         self.shoes = retrieveShoes()
-        self.shoeTextField.text = self.run?.shoe?.nickname
     }
     
     private func showSaveButton() {
@@ -75,34 +98,38 @@ final class RunDetailTableViewController: UITableViewController {
         tap.cancelsTouchesInView = false
         self.tableView.addGestureRecognizer(tap)
     }
-    
-    private func selectShoePicker() {
-        let shoePicker = UIPickerView()
-        shoePicker.delegate = self
-        
-        self.shoeTextField.inputView = shoePicker
-    }
-    
-    private func createToolbar() {
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        
-        // Creating flexible space
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        
-        // Creating Done button
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.dismissKeyboard))
-        
-        // Adding space and button to toolbar
-        toolBar.setItems([flexibleSpace,doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        
-        // Adding toolbar to input accessory view
-        self.shoeTextField.inputAccessoryView = toolBar
-    }
-    
+
     @objc func dismissKeyboard() {
         self.view.endEditing(true)
+    }
+    
+    // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ShoeSelectionHeader") as? ShoeSelectionHeaderView
+        return view
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ShoeCell", for: indexPath) as? ShoeSelectionTableViewCell else { return UITableViewCell() }
+        cell.shoeTextField.text = self.run?.shoe?.nickname
+        cell.shoeTextField.inputView = self.shoePicker
+        cell.shoeTextField.inputAccessoryView = self.toolBar
+        cell.shoeTextField.delegate = self
+        self.shoeTextField = cell.shoeTextField
+        return cell
     }
 }
 
@@ -127,13 +154,14 @@ extension RunDetailTableViewController: UIPickerViewDelegate, UIPickerViewDataSo
         }
         
         self.selectedShoe = newShoe
-        self.shoeTextField.text = self.selectedShoe?.nickname
+        
+        self.shoeTextField?.text = self.selectedShoe?.nickname
     }
 }
 
 extension RunDetailTableViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.shoeTextField.resignFirstResponder()
+        self.shoeTextField?.resignFirstResponder()
         return true
     }
 }

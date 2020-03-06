@@ -13,6 +13,8 @@ class ShoeDetailTableViewController: UITableViewController {
     @IBOutlet weak var totalMiles: UILabel!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var brandLabel: UILabel!
+    @IBOutlet weak var maxMilesLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     
     private let context = CoreDataStack.shared.mainContext
     
@@ -25,6 +27,9 @@ class ShoeDetailTableViewController: UITableViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(RunListHeaderView.self, forHeaderFooterViewReuseIdentifier:"RunListHeader")
+        
+        self.progressView.layer.cornerRadius = 5
+        self.progressView.clipsToBounds = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,14 +37,27 @@ class ShoeDetailTableViewController: UITableViewController {
         
         self.reloadShoe()
         self.tableView.reloadData()
+        self.setProgress()
     }
     
     private func updateViews() {
         let miles = self.shoe.map { String($0.calculateTotalMiles()) }
-        
+        let maxMiles = self.shoe.map { String($0.maxMiles) }
+   
         self.totalMiles.text = miles
+        self.maxMilesLabel.text = maxMiles
         self.nicknameLabel.text = self.shoe?.nickname
         self.brandLabel.text = self.shoe?.brand
+    }
+    
+    private func setProgress() {
+        let miles = self.shoe.map { $0.calculateTotalMiles() } ?? 0
+        let maxMiles = self.shoe.map { $0.maxMiles } ?? 350
+        let progress = Float(miles / maxMiles)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+            self.progressView.setProgress(progress, animated: true)
+        }, completion: nil)
     }
     
     private func reloadShoe() {
@@ -64,7 +82,7 @@ class ShoeDetailTableViewController: UITableViewController {
             }
         }
     }
-    
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -101,6 +119,7 @@ class ShoeDetailTableViewController: UITableViewController {
         return view
     }
     
+    // Need this when there is a header
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
