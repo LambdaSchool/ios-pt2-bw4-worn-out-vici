@@ -617,7 +617,13 @@
                             <outlet property="delegate" destination="LYT-T6-uxH" id="7Kn-el-MJn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Shoes" id="I1g-BO-rc9"/>
+                    <navigationItem key="navigationItem" title="Shoes" id="I1g-BO-rc9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="K04-H7-r2f">
+                            <connections>
+                                <segue destination="Ra7-fB-dQo" kind="show" identifier="EditShoeSegue" id="vIF-Ti-wOc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="brandLabel" destination="H03-4Q-afg" id="qic-wo-lZd"/>
                         <outlet property="maxMilesLabel" destination="Ji8-JE-KHn" id="Tfr-Ar-Uqw"/>
@@ -687,6 +693,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="vIF-Ti-wOc"/>
         <segue reference="Vf0-r1-P14"/>
     </inferredMetricsTieBreakers>
 </document>

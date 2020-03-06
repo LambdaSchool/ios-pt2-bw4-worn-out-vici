@@ -34,7 +34,7 @@ class ShoeController {
         }
     }
     
-    func updateShoe(for shoe: Shoe, brand: String, style: String, nickname: String, maxMiles: Double, isPrimary: Bool) {
+    func updateShoe(shoe: Shoe, brand: String, style: String, nickname: String, maxMiles: Double, isPrimary: Bool) {
         shoe.brand = brand
         shoe.style = style
         shoe.nickname = nickname

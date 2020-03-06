@@ -95,6 +95,7 @@ class MainViewController: UIViewController {
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 shoeDetailVC.shoe = self.fetchedShoesController.fetchedObjects?[indexPath.row]
+                shoeDetailVC.shoeController = self.shoeController
             }
         }
     }

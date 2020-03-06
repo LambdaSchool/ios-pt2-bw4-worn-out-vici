@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AddShoeTableViewControllerDelegate: AnyObject {
+    func shoeWasUpdated(_ shoe: Shoe)
+}
+
 class AddShoeTableViewController: UITableViewController {
     @IBOutlet weak var brandTextField: UITextField!
     @IBOutlet weak var styleTextField: UITextField!
@@ -27,17 +31,41 @@ class AddShoeTableViewController: UITableViewController {
     
     var selectedBrand: String?
     var shoeController: ShoeController?
+    var shoe: Shoe?
+    weak var delegate: AddShoeTableViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.createBrandPicker()
         self.createToolbar()
         self.tapToDismiss()
+        self.updateViews()
         
         if shoeController?.fetchPrimaryShoe() == nil {
             self.primarySwitch.isOn = true
         } else {
             self.primarySwitch.isOn = false
+        }
+    }
+    
+    private func updateViews() {
+        if self.shoe != nil {
+            self.navigationController?.title = "Edit Shoe"
+            self.brandTextField.text = self.shoe?.brand
+            self.styleTextField.text = self.shoe?.style
+            self.nicknameTextField.text = self.shoe?.nickname
+            
+            if self.shoe?.isPrimary == true {
+               self.primarySwitch.isOn = true
+            } else {
+               self.primarySwitch.isOn = false
+            }
+
+            let maxMiles = self.shoe.map { String( $0.maxMiles) }
+            
+            self.maxMilesTextField.text = maxMiles
+        } else {
+            self.navigationController?.title = "Add New Shoe"
         }
     }
     
@@ -51,9 +79,25 @@ class AddShoeTableViewController: UITableViewController {
                 return
         }
         
+        var primaryShoe: Bool = false
+        if self.primarySwitch.isOn {
+            primaryShoe = true
+            print("It's primary shoe")
+        } else if !self.primarySwitch.isOn {
+            primaryShoe = false
+            print("It's NOT primary shoe")
+        }
+        
         let maxMilesDouble = self.maxMilesTextField.text.flatMap { Double($0) } ?? 350
     
-        self.shoeController?.addShoe(brand: brand, style: style, nickname: nickname, maxMiles: maxMilesDouble, isPrimary: self.primarySwitch.isOn)
+        if let shoe = self.shoe {
+            self.shoeController?.updateShoe(shoe: shoe, brand: brand, style: style, nickname: nickname, maxMiles: maxMilesDouble, isPrimary: primaryShoe)
+            
+            self.delegate?.shoeWasUpdated(shoe)
+        } else {
+            self.shoeController?.addShoe(brand: brand, style: style, nickname: nickname, maxMiles: maxMilesDouble, isPrimary: self.primarySwitch.isOn)
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     

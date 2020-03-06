@@ -19,6 +19,7 @@ class ShoeDetailTableViewController: UITableViewController {
     private let context = CoreDataStack.shared.mainContext
     
     var shoe: Shoe?
+    var shoeController :ShoeController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class ShoeDetailTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewDidAppear(animated)
         
         self.reloadShoe()
         self.tableView.reloadData()
@@ -80,6 +81,17 @@ class ShoeDetailTableViewController: UITableViewController {
             {
                 runDetailVC.run = runs[indexPath.row]
             }
+        }
+        
+        if segue.identifier == "EditShoeSegue" {
+            guard let nc = segue.destination as? UINavigationController,
+                let addShoeVC = nc.topViewController as? AddShoeTableViewController else {
+                    return
+            }
+            
+            addShoeVC.delegate = self
+            addShoeVC.shoe = self.shoe
+            addShoeVC.shoeController = self.shoeController
         }
     }
 
@@ -130,5 +142,11 @@ class ShoeDetailTableViewController: UITableViewController {
 extension ShoeDetailTableViewController: RunListHeaderViewDelegate {
     func addRunPressed() {
         self.performSegue(withIdentifier: "AddRunsSegue", sender: self)
+    }
+}
+
+extension ShoeDetailTableViewController: AddShoeTableViewControllerDelegate {
+    func shoeWasUpdated(_ shoe: Shoe) {
+        self.updateViews()
     }
 }
