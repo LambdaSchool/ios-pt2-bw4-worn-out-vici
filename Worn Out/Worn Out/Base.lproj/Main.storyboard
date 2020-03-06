@@ -124,7 +124,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nike" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZg-V0-xjk">
                                                                     <rect key="frame" x="0.0" y="49" width="334" height="18"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="textColor" red="0.054901960784313725" green="0.078431372549019607" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -184,7 +184,7 @@
         <scene sceneID="GvY-pv-wQs">
             <objects>
                 <tableViewController id="Y7X-bn-OjZ" customClass="RunDetailTableViewController" customModule="Worn_Out" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="skd-dO-5u3">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="skd-dO-5u3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="ag5-db-Nnl">
@@ -222,40 +222,40 @@
                                 <constraint firstAttribute="trailing" secondItem="wjy-8D-ttI" secondAttribute="trailing" constant="20" id="fXU-mW-eOq"/>
                             </constraints>
                         </view>
-                        <sections>
-                            <tableViewSection id="fHg-Sz-aXG">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="rhJ-Wl-4l1">
-                                        <rect key="frame" x="20" y="432" width="374" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rhJ-Wl-4l1" id="d2Q-es-ggL">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHE-9i-ghG">
-                                                    <rect key="frame" x="20" y="12" width="39.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="No shoe selected" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6k4-wY-DYR">
-                                                    <rect key="frame" x="79.5" y="13.5" width="274.5" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="6k4-wY-DYR" firstAttribute="leading" secondItem="PHE-9i-ghG" secondAttribute="trailing" constant="20" id="3OA-Hb-Mc4"/>
-                                                <constraint firstAttribute="trailing" secondItem="6k4-wY-DYR" secondAttribute="trailing" constant="20" id="HP6-SM-U0m"/>
-                                                <constraint firstItem="PHE-9i-ghG" firstAttribute="leading" secondItem="d2Q-es-ggL" secondAttribute="leading" constant="20" id="PvE-e1-ZFj"/>
-                                                <constraint firstItem="PHE-9i-ghG" firstAttribute="centerY" secondItem="d2Q-es-ggL" secondAttribute="centerY" id="bl9-SE-2Lf"/>
-                                                <constraint firstItem="6k4-wY-DYR" firstAttribute="centerY" secondItem="PHE-9i-ghG" secondAttribute="centerY" id="vD7-Wy-gKA"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ShoeCell" id="rhJ-Wl-4l1" customClass="ShoeSelectionTableViewCell" customModule="Worn_Out" customModuleProvider="target">
+                                <rect key="frame" x="20" y="469.5" width="374" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rhJ-Wl-4l1" id="d2Q-es-ggL">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHE-9i-ghG">
+                                            <rect key="frame" x="20" y="11.5" width="39.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="No shoe selected" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6k4-wY-DYR">
+                                            <rect key="frame" x="79.5" y="13.5" width="274.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6k4-wY-DYR" firstAttribute="leading" secondItem="PHE-9i-ghG" secondAttribute="trailing" constant="20" id="3OA-Hb-Mc4"/>
+                                        <constraint firstAttribute="trailing" secondItem="6k4-wY-DYR" secondAttribute="trailing" constant="20" id="HP6-SM-U0m"/>
+                                        <constraint firstItem="PHE-9i-ghG" firstAttribute="leading" secondItem="d2Q-es-ggL" secondAttribute="leading" constant="20" id="PvE-e1-ZFj"/>
+                                        <constraint firstItem="PHE-9i-ghG" firstAttribute="centerY" secondItem="d2Q-es-ggL" secondAttribute="centerY" id="bl9-SE-2Lf"/>
+                                        <constraint firstItem="6k4-wY-DYR" firstAttribute="centerY" secondItem="PHE-9i-ghG" secondAttribute="centerY" id="vD7-Wy-gKA"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="shoeTextField" destination="6k4-wY-DYR" id="y1Q-lD-VGm"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Y7X-bn-OjZ" id="aB6-Qh-BLG"/>
                             <outlet property="delegate" destination="Y7X-bn-OjZ" id="UOD-wq-LA2"/>
@@ -264,7 +264,6 @@
                     <navigationItem key="navigationItem" title="Run" id="m1f-os-aE3"/>
                     <connections>
                         <outlet property="milesLabel" destination="OSP-i2-s18" id="0o8-LG-4GG"/>
-                        <outlet property="shoeTextField" destination="6k4-wY-DYR" id="Op7-e4-B8z"/>
                         <outlet property="timeLabel" destination="KRz-v2-sDF" id="mDn-Gh-tGb"/>
                     </connections>
                 </tableViewController>
@@ -498,64 +497,99 @@
         <scene sceneID="SG1-Jh-ual">
             <objects>
                 <tableViewController id="LYT-T6-uxH" customClass="ShoeDetailTableViewController" customModule="Worn_Out" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="88l-bd-0Jv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="88l-bd-0Jv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="M8t-3u-luh">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5CW-nZ-WZC">
-                                    <rect key="frame" x="20" y="176" width="374" height="62"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="IcJ-O0-ENa" userLabel="Main Stack View">
+                                    <rect key="frame" x="20" y="20" width="374" height="374"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL MILES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3g-j3-yM8">
-                                            <rect key="frame" x="143.5" y="0.0" width="87.5" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="10 miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsr-Mx-i8F">
-                                            <rect key="frame" x="121.5" y="21" width="131" height="41"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="jyk-7o-lLN" userLabel="Shoe Stack View">
-                                    <rect key="frame" x="20" y="350.5" width="374" height="43.5"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marathon Shoes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2so-66-5JL">
-                                            <rect key="frame" x="0.0" y="0.0" width="156" height="26.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nike ZoomX Vaporfly NEXT%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H03-4Q-afg">
-                                            <rect key="frame" x="0.0" y="26.5" width="189" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="jyk-7o-lLN" userLabel="Shoe Stack View">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marathon Shoes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2so-66-5JL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="156" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nike ZoomX Vaporfly NEXT%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H03-4Q-afg">
+                                                    <rect key="frame" x="0.0" y="26.5" width="189" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.054901960780000002" green="0.078431372550000003" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N3J-dk-P1M" userLabel="Total Miles Stack View">
+                                            <rect key="frame" x="0.0" y="151.5" width="374" height="84"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL SHOE MILES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bB-TS-Yx9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9H-rb-hAk">
+                                                    <rect key="frame" x="0.0" y="20.5" width="374" height="43"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c19-Vt-5hb">
+                                                    <rect key="frame" x="0.0" y="63.5" width="374" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="W9H-rb-hAk" firstAttribute="centerY" secondItem="N3J-dk-P1M" secondAttribute="centerY" id="rHw-1b-tHM"/>
+                                            </constraints>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ipu-YG-osr" userLabel="Progress Stack View">
+                                            <rect key="frame" x="0.0" y="343" width="374" height="31"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350 miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ji8-JE-KHn">
+                                                    <rect key="frame" x="310.5" y="0.0" width="63.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CeJ-MR-5VU">
+                                                    <rect key="frame" x="0.0" y="21" width="374" height="10"/>
+                                                    <color key="tintColor" red="0.98483105959999995" green="0.5146477398" blue="0.96887176669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="10" id="1Xd-gx-Ndj"/>
+                                                    </constraints>
+                                                </progressView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ji8-JE-KHn" firstAttribute="leading" secondItem="Ipu-YG-osr" secondAttribute="leading" constant="310.5" id="GOu-NC-TOU"/>
+                                                <constraint firstAttribute="trailing" secondItem="CeJ-MR-5VU" secondAttribute="trailing" id="aFd-If-R6a"/>
+                                                <constraint firstItem="CeJ-MR-5VU" firstAttribute="leading" secondItem="Ipu-YG-osr" secondAttribute="leading" id="cko-we-lmv"/>
+                                            </constraints>
+                                        </stackView>
                                     </subviews>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" red="1" green="0.80577369369999996" blue="0.92756109480000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="5CW-nZ-WZC" firstAttribute="centerY" secondItem="M8t-3u-luh" secondAttribute="centerY" id="6Hb-Cz-TW9"/>
-                                <constraint firstAttribute="trailing" secondItem="5CW-nZ-WZC" secondAttribute="trailing" constant="20" id="EUQ-NH-Rm0"/>
-                                <constraint firstAttribute="bottom" secondItem="jyk-7o-lLN" secondAttribute="bottom" constant="20" id="M2c-CN-nYy"/>
-                                <constraint firstItem="5CW-nZ-WZC" firstAttribute="leading" secondItem="M8t-3u-luh" secondAttribute="leading" constant="20" id="gmN-bt-WwQ"/>
-                                <constraint firstItem="jyk-7o-lLN" firstAttribute="leading" secondItem="M8t-3u-luh" secondAttribute="leading" constant="20" id="jFV-UY-wLl"/>
-                                <constraint firstAttribute="trailing" secondItem="jyk-7o-lLN" secondAttribute="trailing" constant="20" id="zL1-w5-KWQ"/>
+                                <constraint firstAttribute="trailing" secondItem="IcJ-O0-ENa" secondAttribute="trailing" constant="20" id="24B-Ew-6Sh"/>
+                                <constraint firstAttribute="bottom" secondItem="IcJ-O0-ENa" secondAttribute="bottom" constant="20" id="KZf-Iq-WsP"/>
+                                <constraint firstItem="IcJ-O0-ENa" firstAttribute="top" secondItem="M8t-3u-luh" secondAttribute="top" constant="20" id="n3s-he-dsk"/>
+                                <constraint firstItem="IcJ-O0-ENa" firstAttribute="leading" secondItem="M8t-3u-luh" secondAttribute="leading" constant="20" id="vk8-zP-hh3"/>
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RunCell" textLabel="udl-Gc-n3c" detailTextLabel="pYm-SD-gpd" style="IBUITableViewCellStyleValue1" id="F2f-xj-YfJ">
-                                <rect key="frame" x="20" y="469.5" width="374" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RunCell" textLabel="udl-Gc-n3c" detailTextLabel="pYm-SD-gpd" style="IBUITableViewCellStyleValue1" id="F2f-xj-YfJ">
+                                <rect key="frame" x="20" y="469.5" width="374" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F2f-xj-YfJ" id="zwu-X1-6M8">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="udl-Gc-n3c">
@@ -585,15 +619,17 @@
                     <navigationItem key="navigationItem" title="Shoes" id="I1g-BO-rc9"/>
                     <connections>
                         <outlet property="brandLabel" destination="H03-4Q-afg" id="qic-wo-lZd"/>
+                        <outlet property="maxMilesLabel" destination="Ji8-JE-KHn" id="Tfr-Ar-Uqw"/>
                         <outlet property="nicknameLabel" destination="2so-66-5JL" id="Xpt-8x-bZN"/>
-                        <outlet property="totalMiles" destination="Lsr-Mx-i8F" id="sq3-1Z-eT1"/>
+                        <outlet property="progressView" destination="CeJ-MR-5VU" id="yGT-v5-Yqd"/>
+                        <outlet property="totalMiles" destination="W9H-rb-hAk" id="yIX-4G-VXq"/>
                         <segue destination="poS-CS-GAY" kind="show" identifier="AddRunsSegue" id="Fpp-lu-Xrj"/>
                         <segue destination="Y7X-bn-OjZ" kind="show" identifier="RunDetailSegue" id="Vf0-r1-P14"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wlj-pf-Ufq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="93" y="867"/>
+            <point key="canvasLocation" x="92.753623188405811" y="866.51785714285711"/>
         </scene>
         <!--Run History-->
         <scene sceneID="tES-bs-SCr">
