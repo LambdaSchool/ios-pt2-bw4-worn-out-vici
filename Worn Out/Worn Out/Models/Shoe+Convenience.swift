@@ -12,6 +12,7 @@ import CoreData
 extension Shoe {
     var displayMiles: String? {
         let numberFormatter = NumberFormatter()
+        numberFormatter.maximumSignificantDigits = 1
         numberFormatter.usesSignificantDigits = true
         return numberFormatter.string(from: NSNumber(value: self.calculateTotalMiles()))
     }

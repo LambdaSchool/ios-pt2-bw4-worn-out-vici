@@ -554,7 +554,7 @@
                                             <rect key="frame" x="0.0" y="343" width="374" height="31"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350 miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ji8-JE-KHn">
-                                                    <rect key="frame" x="310.5" y="0.0" width="63.5" height="17"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -568,8 +568,9 @@
                                                 </progressView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Ji8-JE-KHn" firstAttribute="leading" secondItem="Ipu-YG-osr" secondAttribute="leading" constant="310.5" id="GOu-NC-TOU"/>
+                                                <constraint firstItem="Ji8-JE-KHn" firstAttribute="leading" secondItem="Ipu-YG-osr" secondAttribute="leading" id="GOu-NC-TOU"/>
                                                 <constraint firstAttribute="trailing" secondItem="CeJ-MR-5VU" secondAttribute="trailing" id="aFd-If-R6a"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ji8-JE-KHn" secondAttribute="trailing" id="anV-N1-2st"/>
                                                 <constraint firstItem="CeJ-MR-5VU" firstAttribute="leading" secondItem="Ipu-YG-osr" secondAttribute="leading" id="cko-we-lmv"/>
                                             </constraints>
                                         </stackView>

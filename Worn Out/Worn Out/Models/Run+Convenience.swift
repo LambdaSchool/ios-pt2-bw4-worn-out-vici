@@ -12,6 +12,7 @@ import CoreData
 extension Run {
     var displayMiles: String? {
         let numberFormatter = NumberFormatter()
+        numberFormatter.maximumSignificantDigits = 1
         numberFormatter.usesSignificantDigits = true
         return numberFormatter.string(from: NSNumber(value: self.miles))
     }
