@@ -58,7 +58,7 @@ class ShoeListTableViewCell: UITableViewCell {
     func configureWithShoe(shoe: Shoe) {
         self.titleLabel.text = shoe.nickname
         self.subtitleLabel.text = shoe.brand
-        self.milesLabel.text = "\(shoe.calculateTotalMiles()) miles"
+        self.milesLabel.text = shoe.displayMiles.map { "\($0) miles" }
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

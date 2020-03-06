@@ -11,6 +11,7 @@ import HealthKit
 
 class HealthKitController {
     private let context = CoreDataStack.shared.mainContext
+    private let shoeController = ShoeController()
     
     func sync() {
         self.retrieveWorkouts { workouts in
@@ -49,6 +50,9 @@ class HealthKitController {
                 run.workoutIdentifier = workout.uuid
                 run.miles = workout.totalDistance?.doubleValue(for: .mile()) ?? 0
                 run.startDate = workout.startDate
+                
+                // set the primary shoes for the new run
+                run.shoe = self.shoeController.fetchPrimaryShoe()
             }
             
             // delete a run

@@ -41,7 +41,7 @@ class ShoeDetailTableViewController: UITableViewController {
     }
     
     private func updateViews() {
-        let miles = self.shoe.map { String($0.calculateTotalMiles()) }
+        let miles = self.shoe.flatMap { $0.displayMiles }
         let maxMiles = self.shoe.map { String($0.maxMiles) }
    
         self.totalMiles.text = miles
@@ -103,11 +103,9 @@ class ShoeDetailTableViewController: UITableViewController {
             dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
             
             let date = run.startDate.map { dateFormatter.string(from: $0) }
-
-            let miles = String(run.miles)
             
             cell.textLabel?.text = date
-            cell.detailTextLabel?.text = "\(miles) miles"
+            cell.detailTextLabel?.text = run.displayMiles.map { "\($0) miles" }
         }
         
         return cell

@@ -20,9 +20,9 @@ class MainViewController: UIViewController {
         // Fetch request
         let fetchRequest: NSFetchRequest<Shoe> = Shoe.fetchRequest()
         fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "totalMiles", ascending: false),
             NSSortDescriptor(key: "brand", ascending: true),
-            NSSortDescriptor(key: "nickname", ascending: true),
-            NSSortDescriptor(key: "totalMiles", ascending: true)
+            NSSortDescriptor(key: "nickname", ascending: true)
         ]
         
         let moc = CoreDataStack.shared.mainContext
