@@ -36,8 +36,7 @@ class MainViewController: UIViewController {
         // Fetch request
         let fetchRequest: NSFetchRequest<Run> = Run.fetchRequest()
         fetchRequest.sortDescriptors = [
-            NSSortDescriptor(key: "miles", ascending: true),
-            NSSortDescriptor(key: "startDate", ascending: false)
+            NSSortDescriptor(key: "startDate", ascending: false), 
         ]
         
         let moc = CoreDataStack.shared.mainContext
@@ -125,7 +124,7 @@ extension MainViewController: UITableViewDataSource {
                     return UITableViewCell()
             }
             
-            if let run = self.fetchedRunsController.fetchedObjects?.last {
+            if let run = self.fetchedRunsController.fetchedObjects?.first {
                 cell.configureWithRun(run: run)
             }
 
