@@ -33,6 +33,12 @@ class AddShoeTableViewController: UITableViewController {
         self.createBrandPicker()
         self.createToolbar()
         self.tapToDismiss()
+        
+        if shoeController?.fetchPrimaryShoe() == nil {
+            self.primarySwitch.isOn = true
+        } else {
+            self.primarySwitch.isOn = false
+        }
     }
     
     @IBAction func savePressed(_ sender: Any) {

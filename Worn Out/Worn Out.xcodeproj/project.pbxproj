@@ -17,9 +17,6 @@
 		E352FF8224075FC5001E31AC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E352FF8124075FC5001E31AC /* HealthKit.framework */; };
 		E352FF842407641B001E31AC /* HealthKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF832407641B001E31AC /* HealthKitController.swift */; };
 		E352FF8624076C3D001E31AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF8524076C3D001E31AC /* MainViewController.swift */; };
-		E352FF882408473B001E31AC /* RunRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF872408473A001E31AC /* RunRepresentation.swift */; };
-		E352FF8A2408476B001E31AC /* ShoeRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF892408476B001E31AC /* ShoeRepresentation.swift */; };
-		E352FF8C24085817001E31AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF8B24085817001E31AC /* User.swift */; };
 		E352FF8F24089CD5001E31AC /* WornOut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E352FF8D24089CD4001E31AC /* WornOut.xcdatamodeld */; };
 		E352FF912408A4F3001E31AC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF902408A4F3001E31AC /* CoreDataStack.swift */; };
 		E352FF9B24099FC7001E31AC /* ShoeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352FF9A24099FC7001E31AC /* ShoeController.swift */; };
@@ -34,6 +31,7 @@
 		E39015AD240CC52D0030CA1B /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39015AA240CC52C0030CA1B /* SummaryTableViewCell.swift */; };
 		E3DF23132411A705005022A7 /* ShoeSelectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DF23122411A705005022A7 /* ShoeSelectionHeaderView.swift */; };
 		E3DF23152411AFC8005022A7 /* ShoeSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DF23142411AFC8005022A7 /* ShoeSelectionTableViewCell.swift */; };
+		E3DF23172411F30D005022A7 /* Run+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DF23162411F30D005022A7 /* Run+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,9 +48,6 @@
 		E352FF8124075FC5001E31AC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E352FF832407641B001E31AC /* HealthKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitController.swift; sourceTree = "<group>"; };
 		E352FF8524076C3D001E31AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		E352FF872408473A001E31AC /* RunRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunRepresentation.swift; sourceTree = "<group>"; };
-		E352FF892408476B001E31AC /* ShoeRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeRepresentation.swift; sourceTree = "<group>"; };
-		E352FF8B24085817001E31AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E352FF8E24089CD4001E31AC /* WornOut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WornOut.xcdatamodel; sourceTree = "<group>"; };
 		E352FF902408A4F3001E31AC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		E352FF9A24099FC7001E31AC /* ShoeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeController.swift; sourceTree = "<group>"; };
@@ -69,6 +64,7 @@
 		E39015AA240CC52C0030CA1B /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		E3DF23122411A705005022A7 /* ShoeSelectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeSelectionHeaderView.swift; sourceTree = "<group>"; };
 		E3DF23142411AFC8005022A7 /* ShoeSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		E3DF23162411F30D005022A7 /* Run+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,10 +135,8 @@
 			children = (
 				E352FF902408A4F3001E31AC /* CoreDataStack.swift */,
 				E352FF8D24089CD4001E31AC /* WornOut.xcdatamodeld */,
-				E352FF872408473A001E31AC /* RunRepresentation.swift */,
-				E352FF892408476B001E31AC /* ShoeRepresentation.swift */,
-				E352FF8B24085817001E31AC /* User.swift */,
 				E352FF9C2409D353001E31AC /* Shoe+Convenience.swift */,
+				E3DF23162411F30D005022A7 /* Run+Convenience.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,8 +277,6 @@
 				E36544D2241049AC00047808 /* RunListTableViewCell.swift in Sources */,
 				E352FF9B24099FC7001E31AC /* ShoeController.swift in Sources */,
 				E352FF7E24075FB2001E31AC /* HealthKitSetupAssistant.swift in Sources */,
-				E352FF882408473B001E31AC /* RunRepresentation.swift in Sources */,
-				E352FF8A2408476B001E31AC /* ShoeRepresentation.swift in Sources */,
 				E3901592240CAB330030CA1B /* AddShoeTableViewController.swift in Sources */,
 				E352FF9D2409D353001E31AC /* Shoe+Convenience.swift in Sources */,
 				E36544D424108E2F00047808 /* RunListHeaderView.swift in Sources */,
@@ -292,10 +284,10 @@
 				E3DF23132411A705005022A7 /* ShoeSelectionHeaderView.swift in Sources */,
 				E352FF5C24061D97001E31AC /* AppDelegate.swift in Sources */,
 				E39015AC240CC52D0030CA1B /* ShoeListTableViewCell.swift in Sources */,
+				E3DF23172411F30D005022A7 /* Run+Convenience.swift in Sources */,
 				E36544D02410427800047808 /* ShoeDetailTableViewController.swift in Sources */,
 				E352FF8F24089CD5001E31AC /* WornOut.xcdatamodeld in Sources */,
 				E352FF912408A4F3001E31AC /* CoreDataStack.swift in Sources */,
-				E352FF8C24085817001E31AC /* User.swift in Sources */,
 				E3DF23152411AFC8005022A7 /* ShoeSelectionTableViewCell.swift in Sources */,
 				E36544D62410929E00047808 /* RunHistoryTableViewController.swift in Sources */,
 				E352FF842407641B001E31AC /* HealthKitController.swift in Sources */,

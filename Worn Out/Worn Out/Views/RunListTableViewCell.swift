@@ -45,7 +45,7 @@ class RunListTableViewCell: UITableViewCell {
         let date = run.startDate.map { dateFormatter.string(from: $0) }
         self.dateLabel.text = date
         
-        self.milesLabel.text = "\(run.miles) miles"
+        self.milesLabel.text = run.displayMiles.map { "\($0) miles" }
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

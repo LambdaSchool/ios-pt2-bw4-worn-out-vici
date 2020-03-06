@@ -57,9 +57,7 @@ final class RunDetailTableViewController: UITableViewController {
         
         let date = self.run?.startDate.map { dateFormatter.string(from: $0) }
         self.timeLabel.text = date
-        
-        let miles = self.run.map { String($0.miles) }
-        self.milesLabel.text = miles
+        self.milesLabel.text = self.run?.displayMiles.map { $0 }
         
         self.shoes = retrieveShoes()
     }
