@@ -64,7 +64,7 @@ class ShoeListTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.accessoryType = .disclosureIndicator
         self.setupStackView()
-        self.setupIconImage()
+        self.setupProgressBar()
         self.setupInnerStackView()
     }
     
@@ -82,7 +82,7 @@ class ShoeListTableViewCell: UITableViewCell {
         ])
     }
     
-    private func setupIconImage() {
+    private func setupProgressBar() {
         self.stackView.addArrangedSubview(self.circleBar)
         NSLayoutConstraint.activate([
             self.circleBar.heightAnchor.constraint(equalToConstant: 40),
