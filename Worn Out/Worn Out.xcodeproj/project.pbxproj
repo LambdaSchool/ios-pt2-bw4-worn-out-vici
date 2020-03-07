@@ -32,6 +32,7 @@
 		E3DF23132411A705005022A7 /* ShoeSelectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DF23122411A705005022A7 /* ShoeSelectionHeaderView.swift */; };
 		E3DF23152411AFC8005022A7 /* ShoeSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DF23142411AFC8005022A7 /* ShoeSelectionTableViewCell.swift */; };
 		E3DF23172411F30D005022A7 /* Run+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DF23162411F30D005022A7 /* Run+Convenience.swift */; };
+		E3E54BA324143032000B98B5 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E54BA224143032000B98B5 /* CircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		E3DF23122411A705005022A7 /* ShoeSelectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeSelectionHeaderView.swift; sourceTree = "<group>"; };
 		E3DF23142411AFC8005022A7 /* ShoeSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		E3DF23162411F30D005022A7 /* Run+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+Convenience.swift"; sourceTree = "<group>"; };
+		E3E54BA224143032000B98B5 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,8 +199,9 @@
 				E3DF23122411A705005022A7 /* ShoeSelectionHeaderView.swift */,
 				E3DF23142411AFC8005022A7 /* ShoeSelectionTableViewCell.swift */,
 				E39015AA240CC52C0030CA1B /* SummaryTableViewCell.swift */,
-				E39015A9240CC52C0030CA1B /* ShoeListTableViewCell.swift */,
 				E36544D1241049AC00047808 /* RunListTableViewCell.swift */,
+				E39015A9240CC52C0030CA1B /* ShoeListTableViewCell.swift */,
+				E3E54BA224143032000B98B5 /* CircleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				E3901592240CAB330030CA1B /* AddShoeTableViewController.swift in Sources */,
 				E352FF9D2409D353001E31AC /* Shoe+Convenience.swift in Sources */,
 				E36544D424108E2F00047808 /* RunListHeaderView.swift in Sources */,
+				E3E54BA324143032000B98B5 /* CircleView.swift in Sources */,
 				E39015AD240CC52D0030CA1B /* SummaryTableViewCell.swift in Sources */,
 				E3DF23132411A705005022A7 /* ShoeSelectionHeaderView.swift in Sources */,
 				E352FF5C24061D97001E31AC /* AppDelegate.swift in Sources */,

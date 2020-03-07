@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 extension Shoe {
     var displayMiles: String? {
@@ -15,6 +16,10 @@ extension Shoe {
         numberFormatter.maximumSignificantDigits = 1
         numberFormatter.usesSignificantDigits = true
         return numberFormatter.string(from: NSNumber(value: self.calculateTotalMiles()))
+    }
+    
+    var progress: CGFloat {
+        return CGFloat(totalMiles / maxMiles)
     }
     
     convenience init(identifier: UUID = UUID(), brand: String, style: String? = nil, nickname: String?, maxMiles: Double, isPrimary: Bool, totalMiles: Double, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
