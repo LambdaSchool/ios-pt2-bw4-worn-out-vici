@@ -19,10 +19,8 @@ class ShoeListTableViewCell: UITableViewCell {
         return view
     }()
     
-    private lazy var iconImage: UIImageView = {
-        let view = UIImageView()
-        view.backgroundColor = UIColor(red: 255/255, green: 129/255, blue: 209/255, alpha: 1)
-        view.layer.cornerRadius = 20
+    private lazy var circleBar: CircleView = {
+        let view = CircleView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -58,7 +56,8 @@ class ShoeListTableViewCell: UITableViewCell {
     func configureWithShoe(shoe: Shoe) {
         self.titleLabel.text = shoe.nickname
         self.subtitleLabel.text = shoe.brand
-        self.milesLabel.text = shoe.displayMiles.map { "\($0) miles" }
+        self.milesLabel.text = shoe.displayMiles.map { "\($0) m" }
+        self.circleBar.animateProgressBar(progress: shoe.progress)
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -84,10 +83,10 @@ class ShoeListTableViewCell: UITableViewCell {
     }
     
     private func setupIconImage() {
-        self.stackView.addArrangedSubview(self.iconImage)
+        self.stackView.addArrangedSubview(self.circleBar)
         NSLayoutConstraint.activate([
-            self.iconImage.heightAnchor.constraint(equalToConstant: 40),
-            self.iconImage.widthAnchor.constraint(equalTo: self.iconImage.heightAnchor),
+            self.circleBar.heightAnchor.constraint(equalToConstant: 40),
+            self.circleBar.widthAnchor.constraint(equalTo: self.circleBar.heightAnchor),
         ])
     }
     
