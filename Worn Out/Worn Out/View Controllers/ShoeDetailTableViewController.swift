@@ -134,6 +134,10 @@ class ShoeDetailTableViewController: UITableViewController {
         return 50
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "RunDetailSegue", sender: nil)
     }

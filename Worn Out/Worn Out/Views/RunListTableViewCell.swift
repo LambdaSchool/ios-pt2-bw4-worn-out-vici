@@ -74,5 +74,4 @@ class RunListTableViewCell: UITableViewCell {
         self.innerStackView.addArrangedSubview(self.dateLabel)
         self.innerStackView.addArrangedSubview(self.milesLabel)
     }
-
 }

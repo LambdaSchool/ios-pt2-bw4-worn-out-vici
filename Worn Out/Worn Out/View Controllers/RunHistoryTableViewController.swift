@@ -92,6 +92,10 @@ class RunHistoryTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .none
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 }
 
 extension RunHistoryTableViewController: NSFetchedResultsControllerDelegate {
