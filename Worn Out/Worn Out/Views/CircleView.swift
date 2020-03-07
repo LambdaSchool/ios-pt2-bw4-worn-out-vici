@@ -19,7 +19,6 @@ class CircleView: UIView {
         let center = CGPoint(x: 20, y: 20)
         
         // track
-
         let circularPath = UIBezierPath(arcCenter: center, radius: 18, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
         self.trackLayer.path = circularPath.cgPath
         
