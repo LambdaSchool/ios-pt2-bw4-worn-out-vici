@@ -41,7 +41,7 @@ class MainViewController: UIViewController {
         
         let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
-        frc.delegate = self
+//        frc.delegate = self
         try! frc.performFetch()
         return frc
     }() // to store the variable after it runs
@@ -147,7 +147,6 @@ extension MainViewController: UITableViewDataSource {
     
     // Delete Shoe
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        print(indexPath.section)
         if editingStyle == UITableViewCell.EditingStyle.delete, indexPath.section == 1 {
             if let shoe = self.fetchedShoesController.fetchedObjects?[indexPath.row] {
                 self.shoeController.deleteShoe(shoe: shoe)
@@ -192,7 +191,46 @@ extension MainViewController: ShoeListHeaderViewDelegate {
 }
 
 extension MainViewController: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+                switch type {
+        case .insert:
+            tableView.insertSections(IndexSet(integer: sectionIndex + 1), with: .automatic)
+        case .delete:
+            tableView.deleteSections(IndexSet(integer: sectionIndex + 1), with: .automatic)
+        default:
+            break
+        }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        let indexPath = indexPath.map { IndexPath(row: $0.row, section: 1) }
+        let newIndexPath = newIndexPath.map { IndexPath(row: $0.row, section: 1) }
+        switch type {
+        case .insert:
+            guard let newIndexPath = newIndexPath else { return }
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        case.update:
+            guard let indexPath = indexPath else { return }
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        case .move:
+            guard let oldIndexPath = indexPath,
+            let newIndexPath = newIndexPath else { return }
+            tableView.deleteRows(at: [oldIndexPath], with: .automatic)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        case .delete:
+            guard let indexPath = indexPath else { return }
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        @unknown default:
+            break
+        }
+    }
+    
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.tableView.reloadData()
+        self.tableView.endUpdates()
     }
 }
+
