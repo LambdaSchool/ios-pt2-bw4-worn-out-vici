@@ -145,6 +145,16 @@ extension MainViewController: UITableViewDataSource {
         }
     }
     
+    // Delete Shoe
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        print(indexPath.section)
+        if editingStyle == UITableViewCell.EditingStyle.delete, indexPath.section == 1 {
+            if let shoe = self.fetchedShoesController.fetchedObjects?[indexPath.row] {
+                self.shoeController.deleteShoe(shoe: shoe)
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 0:
