@@ -41,7 +41,7 @@ class MainViewController: UIViewController {
         
         let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
-//        frc.delegate = self
+        frc.delegate = self
         try! frc.performFetch()
         return frc
     }() // to store the variable after it runs
@@ -192,11 +192,13 @@ extension MainViewController: ShoeListHeaderViewDelegate {
 
 extension MainViewController: NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        guard controller != self.fetchedRunsController else { return }
         self.tableView.beginUpdates()
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
-                switch type {
+        guard controller != self.fetchedRunsController else { return }
+        switch type {
         case .insert:
             tableView.insertSections(IndexSet(integer: sectionIndex + 1), with: .automatic)
         case .delete:
@@ -207,6 +209,7 @@ extension MainViewController: NSFetchedResultsControllerDelegate {
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        guard controller != self.fetchedRunsController else { return }
         let indexPath = indexPath.map { IndexPath(row: $0.row, section: 1) }
         let newIndexPath = newIndexPath.map { IndexPath(row: $0.row, section: 1) }
         switch type {
@@ -230,7 +233,11 @@ extension MainViewController: NSFetchedResultsControllerDelegate {
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.tableView.endUpdates()
+        if controller == self.fetchedRunsController {
+            self.tableView.reloadData()
+        } else {
+            self.tableView.endUpdates()
+        }
     }
 }
 
