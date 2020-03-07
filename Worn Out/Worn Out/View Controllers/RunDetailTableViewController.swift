@@ -129,6 +129,10 @@ final class RunDetailTableViewController: UITableViewController {
         self.shoeTextField = cell.shoeTextField
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 }
 
 extension RunDetailTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {

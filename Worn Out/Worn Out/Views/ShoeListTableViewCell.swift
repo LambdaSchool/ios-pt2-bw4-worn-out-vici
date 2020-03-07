@@ -78,7 +78,8 @@ class ShoeListTableViewCell: UITableViewCell {
             self.stackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             self.stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             self.stackView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            self.stackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
+            self.stackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            self.stackView.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     
@@ -96,6 +97,4 @@ class ShoeListTableViewCell: UITableViewCell {
         self.innerStackView.addArrangedSubview(self.subtitleLabel)
         self.stackView.addArrangedSubview(self.milesLabel)
     }
-    
-    
 }
