@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // change tint color globally
+        UINavigationBar.appearance().tintColor = UIColor(red: 255/255, green: 129/255, blue: 209/255, alpha: 1)
+        
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
         
         self.notificationCenter.requestAuthorization(options: options) {

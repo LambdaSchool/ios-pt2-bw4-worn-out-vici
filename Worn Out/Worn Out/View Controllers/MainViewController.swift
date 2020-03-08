@@ -149,6 +149,15 @@ extension MainViewController: UITableViewDataSource {
         }
     }
     
+    // Disable the first section from editing
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.section == 0 {
+            return false
+        } else {
+            return true
+        }
+    }
+    
     // Delete Shoe
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete, indexPath.section == 1 {
