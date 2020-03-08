@@ -76,10 +76,10 @@ class RunHistoryTableViewController: UITableViewController {
         dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
         
         let date = run?.startDate.map { dateFormatter.string(from: $0) }
-        let miles = run.map { String($0.miles) }
         
         cell.textLabel?.text = date
-        cell.detailTextLabel?.text = miles
+        cell.detailTextLabel?.text = run?.displayMiles.map { "\($0) miles" }
+        
         return cell
     }
     
