@@ -16,6 +16,10 @@ class MainViewController: UIViewController {
     private let healthKitController = HealthKitController() // run controller
     private let shoeController = ShoeController()
     
+    private var latestRun: Run? {
+        return self.fetchedRunsController.fetchedObjects?.last
+    }
+    
     lazy var fetchedShoesController: NSFetchedResultsController<Shoe> = {
         // Fetch request
         let fetchRequest: NSFetchRequest<Shoe> = Shoe.fetchRequest()
@@ -87,7 +91,7 @@ class MainViewController: UIViewController {
         if segue.identifier == "RunDetailSegue" {
             guard let runDetailVC = segue.destination as? RunDetailTableViewController else { return }
             
-            runDetailVC.run =  self.fetchedRunsController.fetchedObjects?.last
+            runDetailVC.run =  self.latestRun
         }
         
         if segue.identifier == "ShoeDetailSegue" {
@@ -125,7 +129,7 @@ extension MainViewController: UITableViewDataSource {
                     return UITableViewCell()
             }
             
-            if let run = self.fetchedRunsController.fetchedObjects?.first {
+            if let run = self.latestRun {
                 cell.configureWithRun(run: run)
             }
 
