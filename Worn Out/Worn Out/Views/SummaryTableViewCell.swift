@@ -29,7 +29,7 @@ class SummaryTableViewCell: UITableViewCell {
         self.brandLabel.text = run.shoe?.brand
         
         let miles = run.shoe.flatMap { $0.displayTotalMiles }
-        
+
         self.totalMilesLabel.text = miles
         
         let dateFormatter = DateFormatter()
