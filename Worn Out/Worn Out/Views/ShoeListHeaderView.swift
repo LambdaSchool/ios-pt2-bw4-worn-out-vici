@@ -32,6 +32,7 @@ class ShoeListHeaderView: UITableViewHeaderFooterView {
     
     private lazy var addButton: UIButton = {
         let button = UIButton(type: .contactAdd)
+        button.tintColor = UIColor(red: 37/255, green: 134/255, blue: 67/255, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(addPressed), for: .primaryActionTriggered)
         return button
