@@ -11,11 +11,18 @@ import CoreData
 import UIKit
 
 extension Shoe {
-    var displayMiles: String? {
+    var displayTotalMiles: String? {
         let numberFormatter = NumberFormatter()
         numberFormatter.maximumSignificantDigits = 1
         numberFormatter.usesSignificantDigits = true
         return numberFormatter.string(from: NSNumber(value: self.calculateTotalMiles()))
+    }
+    
+    var displayMaxMiles: String? {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.maximumSignificantDigits = 2
+        numberFormatter.usesSignificantDigits = true
+        return numberFormatter.string(from: NSNumber(value: self.maxMiles))
     }
     
     var progress: CGFloat {

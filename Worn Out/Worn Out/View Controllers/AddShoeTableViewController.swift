@@ -61,7 +61,7 @@ class AddShoeTableViewController: UITableViewController {
                self.primarySwitch.isOn = false
             }
 
-            let maxMiles = self.shoe.map { String( $0.maxMiles) }
+            let maxMiles = self.shoe.flatMap { $0.displayMaxMiles }
             
             self.maxMilesTextField.text = maxMiles
         } else {

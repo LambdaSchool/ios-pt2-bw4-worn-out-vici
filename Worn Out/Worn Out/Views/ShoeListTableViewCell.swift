@@ -56,7 +56,7 @@ class ShoeListTableViewCell: UITableViewCell {
     func configureWithShoe(shoe: Shoe) {
         self.titleLabel.text = shoe.nickname
         self.subtitleLabel.text = shoe.brand
-        self.milesLabel.text = shoe.displayMiles.map { "\($0) m" }
+        self.milesLabel.text = shoe.displayTotalMiles.map { "\($0) miles" }
         self.circleBar.animateProgressBar(progress: shoe.progress)
     }
     
