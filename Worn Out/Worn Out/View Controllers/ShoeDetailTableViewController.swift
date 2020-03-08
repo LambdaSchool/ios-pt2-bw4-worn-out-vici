@@ -42,11 +42,11 @@ class ShoeDetailTableViewController: UITableViewController {
     }
     
     private func updateViews() {
-        let miles = self.shoe.flatMap { $0.displayMiles }
-        let maxMiles = self.shoe.map { String($0.maxMiles) }
+        let miles = self.shoe.flatMap { $0.displayTotalMiles }
+        let maxMiles = self.shoe.flatMap { $0.displayMaxMiles }
    
         self.totalMiles.text = miles
-        self.maxMilesLabel.text = maxMiles
+        self.maxMilesLabel.text = maxMiles.map { "\($0) miles" }
         self.nicknameLabel.text = self.shoe?.nickname
         self.brandLabel.text = self.shoe?.brand
     }
@@ -118,6 +118,7 @@ class ShoeDetailTableViewController: UITableViewController {
             
             cell.textLabel?.text = date
             cell.detailTextLabel?.text = run.displayMiles.map { "\($0) miles" }
+            cell.accessoryType = .disclosureIndicator
         }
         
         return cell

@@ -28,7 +28,7 @@ class SummaryTableViewCell: UITableViewCell {
         self.nicknameLabel.text = run.shoe?.nickname
         self.brandLabel.text = run.shoe?.brand
         
-        let miles = run.shoe.flatMap { $0.displayMiles }
+        let miles = run.shoe.flatMap { $0.displayTotalMiles }
         
         self.totalMilesLabel.text = miles
         
