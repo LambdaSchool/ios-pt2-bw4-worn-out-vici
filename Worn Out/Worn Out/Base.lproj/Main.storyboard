@@ -304,7 +304,7 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nike" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5mj-Gg-jeL" userLabel="Brand Text Field">
                                                     <rect key="frame" x="358" y="10" width="36" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -332,7 +332,7 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="React" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="17e-5h-5vR" userLabel="Style Text Field">
                                                     <rect key="frame" x="351" y="10" width="43" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -390,7 +390,7 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Marathon Shoes" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AiL-lw-IEa" userLabel="Nickname Text Field">
                                                     <rect key="frame" x="267" y="10" width="127" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
