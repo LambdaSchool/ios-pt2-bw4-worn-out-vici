@@ -31,7 +31,10 @@ class RunListHeaderView: UITableViewHeaderFooterView {
     }()
     
     private lazy var addButton: UIButton = {
-        let button = UIButton(type: .contactAdd)
+        // setting up the add icon
+        let largeSize = UIImage.SymbolConfiguration(weight: .bold)
+        let image = UIImage(systemName: "plus", withConfiguration: largeSize)
+        let button = UIButton()
         button.tintColor = UIColor(red: 37/255, green: 134/255, blue: 67/255, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(addPressed), for: .primaryActionTriggered)
