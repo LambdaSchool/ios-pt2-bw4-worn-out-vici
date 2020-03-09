@@ -25,7 +25,7 @@ class ShoeListHeaderView: UITableViewHeaderFooterView {
     
     private lazy var headerLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.font = UIFont(name: "AvenirNext-DemiBold", size: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
