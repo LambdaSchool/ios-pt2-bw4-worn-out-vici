@@ -39,6 +39,7 @@ class ShoeDetailTableViewController: UITableViewController {
         self.reloadShoe()
         self.tableView.reloadData()
         self.setProgress()
+        self.updateViews()
     }
     
     private func updateViews() {

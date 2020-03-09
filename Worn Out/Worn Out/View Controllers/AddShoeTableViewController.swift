@@ -92,7 +92,6 @@ class AddShoeTableViewController: UITableViewController {
     
     @IBAction func savePressed(_ sender: Any) {
         guard let brand = self.brandTextField.text, !brand.isEmpty,
-            let style = self.styleTextField.text,
             let nickname = self.nicknameTextField.text, !nickname.isEmpty else {
                 let alert = UIAlertController(title: "Missing some fields", message: "Check your information and try again.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -108,6 +107,8 @@ class AddShoeTableViewController: UITableViewController {
             primaryShoe = false
             print("It's NOT primary shoe")
         }
+        
+        let style = self.styleTextField.text
         
         let maxMilesDouble = self.maxMilesTextField.text.flatMap { Double($0) } ?? 350
     

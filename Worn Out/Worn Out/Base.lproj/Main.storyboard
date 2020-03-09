@@ -19,14 +19,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SummaryCell" id="Bsk-Fl-OS3" customClass="SummaryTableViewCell" customModule="Worn_Out" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.5" width="374" height="301"/>
+                                        <rect key="frame" x="20" y="55.5" width="374" height="313"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bsk-Fl-OS3" id="kfY-9i-fPD">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="301"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="313"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="IXg-rc-g8j" userLabel="Main Stack View">
-                                                    <rect key="frame" x="20" y="20" width="334" height="261"/>
+                                                    <rect key="frame" x="20" y="20" width="334" height="273"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="BD6-VL-itM" userLabel="Time Stack View">
                                                             <rect key="frame" x="0.0" y="0.0" width="334" height="41.5"/>
@@ -46,10 +46,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="28t-U5-cGX" userLabel="Miles Stack View">
-                                                            <rect key="frame" x="0.0" y="71.5" width="334" height="92.5"/>
+                                                            <rect key="frame" x="0.0" y="71.5" width="334" height="104.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="1ld-ai-oLV" userLabel="Distance Stack View">
-                                                                    <rect key="frame" x="0.0" y="0.5" width="167" height="92"/>
+                                                                    <rect key="frame" x="0.0" y="0.5" width="167" height="104"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISTANCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggv-vs-ceT">
                                                                             <rect key="frame" x="49.5" y="0.0" width="68" height="20.5"/>
@@ -58,13 +58,13 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8We-SQ-WRW">
-                                                                            <rect key="frame" x="65" y="24.5" width="37.5" height="43"/>
-                                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                                                            <rect key="frame" x="57.5" y="24.5" width="52" height="55"/>
+                                                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="40"/>
                                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENC-fU-9ou">
-                                                                            <rect key="frame" x="63.5" y="71.5" width="40" height="20.5"/>
+                                                                            <rect key="frame" x="63.5" y="83.5" width="40" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                                                                     </constraints>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fGJ-jJ-g8z" userLabel="Total Miles Stack View">
-                                                                    <rect key="frame" x="167" y="0.5" width="167" height="92"/>
+                                                                    <rect key="frame" x="167" y="0.5" width="167" height="104"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOE MILEAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxM-vN-cA3">
                                                                             <rect key="frame" x="33" y="0.0" width="101" height="20.5"/>
@@ -84,13 +84,13 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kme-gT-ZyB">
-                                                                            <rect key="frame" x="54.5" y="24.5" width="58" height="43"/>
-                                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                                                            <rect key="frame" x="44.5" y="24.5" width="78" height="55"/>
+                                                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="40"/>
                                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19J-i5-Rni">
-                                                                            <rect key="frame" x="63.5" y="71.5" width="40" height="20.5"/>
+                                                                            <rect key="frame" x="63.5" y="83.5" width="40" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -107,7 +107,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="MUw-Dl-kZ2" userLabel="Shoe Stack View">
-                                                            <rect key="frame" x="0.0" y="194" width="334" height="67"/>
+                                                            <rect key="frame" x="0.0" y="206" width="334" height="67"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOES " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiE-ew-8ZF">
                                                                     <rect key="frame" x="0.0" y="0.0" width="334" height="17"/>
@@ -192,7 +192,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wjy-8D-ttI">
-                                    <rect key="frame" x="20" y="150.5" width="374" height="113"/>
+                                    <rect key="frame" x="20" y="144.5" width="374" height="125"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LATEST RUN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpZ-NJ-WvK">
                                             <rect key="frame" x="145" y="0.0" width="84" height="17"/>
@@ -207,13 +207,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSP-i2-s18">
-                                            <rect key="frame" x="168.5" y="45.5" width="37.5" height="43"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                            <rect key="frame" x="161" y="45.5" width="52" height="55"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="40"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEY-x3-5UC">
-                                            <rect key="frame" x="167" y="92.5" width="40" height="20.5"/>
+                                            <rect key="frame" x="167" y="104.5" width="40" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -531,7 +531,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N3J-dk-P1M" userLabel="Total Miles Stack View">
-                                            <rect key="frame" x="0.0" y="150.5" width="374" height="84"/>
+                                            <rect key="frame" x="0.0" y="144.5" width="374" height="96"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOE MILEAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bB-TS-Yx9">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -540,13 +540,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9H-rb-hAk">
-                                                    <rect key="frame" x="0.0" y="20.5" width="374" height="43"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                                    <rect key="frame" x="0.0" y="20.5" width="374" height="55"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="40"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c19-Vt-5hb">
-                                                    <rect key="frame" x="0.0" y="63.5" width="374" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="75.5" width="374" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>

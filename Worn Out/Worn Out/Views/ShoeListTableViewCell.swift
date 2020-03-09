@@ -13,7 +13,7 @@ class ShoeListTableViewCell: UITableViewCell {
         let view = UIStackView()
         view.axis = .horizontal
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        view.layoutMargins = UIEdgeInsets(top: 12, left: 8, bottom: 12, right: 8)
         view.isLayoutMarginsRelativeArrangement = true
         view.spacing = 8
         return view
@@ -79,15 +79,13 @@ class ShoeListTableViewCell: UITableViewCell {
             self.stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             self.stackView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
             self.stackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
-            self.stackView.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     
     private func setupProgressBar() {
         self.stackView.addArrangedSubview(self.circleBar)
         NSLayoutConstraint.activate([
-            self.circleBar.heightAnchor.constraint(equalToConstant: 40),
-            self.circleBar.widthAnchor.constraint(equalTo: self.circleBar.heightAnchor),
+            self.circleBar.widthAnchor.constraint(equalToConstant: 36),
         ])
     }
     

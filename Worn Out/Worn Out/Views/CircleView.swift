@@ -16,10 +16,10 @@ class CircleView: UIView {
     init() {
         super.init(frame: .zero)
         
-        let center = CGPoint(x: 20, y: 20)
+        let center = CGPoint(x: 18, y: 18)
         
         // track
-        let circularPath = UIBezierPath(arcCenter: center, radius: 18, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: center, radius: 13, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
         self.trackLayer.path = circularPath.cgPath
         
         self.trackLayer.strokeColor = UIColor(red: 255/255, green: 129/255, blue: 209/255, alpha: 0.3).cgColor
