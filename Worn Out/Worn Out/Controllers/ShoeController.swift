@@ -12,8 +12,8 @@ import CoreData
 class ShoeController {
     private let context = CoreDataStack.shared.mainContext
     
-    func addShoe(brand: String, style: String, nickname: String?, id: UUID = UUID(), maxMiles: Double, isPrimary: Bool, totalMiles: Double = 0) {
-        let newShoe = Shoe(brand: brand, nickname: nickname, maxMiles: maxMiles, isPrimary: isPrimary, totalMiles: totalMiles)
+    func addShoe(brand: String, style: String?, nickname: String, id: UUID = UUID(), maxMiles: Double, isPrimary: Bool, totalMiles: Double = 0) {
+        let newShoe = Shoe(brand: brand, style: style, nickname: nickname, maxMiles: maxMiles, isPrimary: isPrimary, totalMiles: totalMiles)
         
         // check if primary is true or not to change the primary shoes
         if newShoe.isPrimary {
@@ -34,7 +34,7 @@ class ShoeController {
         }
     }
     
-    func updateShoe(shoe: Shoe, brand: String, style: String, nickname: String, maxMiles: Double, isPrimary: Bool) {
+    func updateShoe(shoe: Shoe, brand: String, style: String?, nickname: String, maxMiles: Double, isPrimary: Bool) {
         shoe.brand = brand
         shoe.style = style
         shoe.nickname = nickname

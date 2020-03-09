@@ -19,7 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // change tint color globally
-        UINavigationBar.appearance().tintColor = UIColor(red: 255/255, green: 129/255, blue: 209/255, alpha: 1)
+        let appearance = UINavigationBar.appearance()
+        appearance.tintColor = UIColor(red: 255/255, green: 129/255, blue: 209/255, alpha: 1)
+        
+        // change font
+        let titleFont = UIFont(name: "AvenirNext-Medium", size: 20)
+        appearance.titleTextAttributes = [.font: titleFont!]
+        
+        let largeTitleFont = UIFont(name: "AvenirNext-Bold", size: 36)
+        appearance.largeTitleTextAttributes = [.font: largeTitleFont!]
+        
+        let font = UIFont(name: "AvenirNext-Medium", size: 18)
+        UIBarButtonItem.appearance().setTitleTextAttributes([.font: font!], for: .normal)
         
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
         

@@ -26,7 +26,7 @@ extension Shoe {
     }
     
     var progress: CGFloat {
-        return CGFloat(totalMiles / maxMiles)
+        return CGFloat(self.calculateTotalMiles() / self.maxMiles)
     }
     
     convenience init(identifier: UUID = UUID(), brand: String, style: String? = nil, nickname: String?, maxMiles: Double, isPrimary: Bool, totalMiles: Double, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
