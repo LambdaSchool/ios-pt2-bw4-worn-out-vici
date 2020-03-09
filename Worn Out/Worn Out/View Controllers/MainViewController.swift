@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     private let shoeController = ShoeController()
     
     private var latestRun: Run? {
-        return self.fetchedRunsController.fetchedObjects?.last
+        return self.fetchedRunsController.fetchedObjects?.first
     }
     
     lazy var fetchedShoesController: NSFetchedResultsController<Shoe> = {
