@@ -87,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Add the content to the notification content
         notificationContent.title = "New run just added to the primary shoes"
-        notificationContent.body = "Go to the app if you want to change your primary shoes."
+        notificationContent.body = "Open the app to see the details."
 
         let request = UNNotificationRequest(identifier: "testNotification",
                                             content: notificationContent,
