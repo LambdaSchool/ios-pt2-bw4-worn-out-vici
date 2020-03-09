@@ -34,6 +34,7 @@ class ShoeListTableViewCell: UITableViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont(name: "AvenirNext-Medium", size: 17)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -41,13 +42,14 @@ class ShoeListTableViewCell: UITableViewCell {
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .caption1)
+        label.font = UIFont(name: "AvenirNext-Medium", size: 15)
         label.textColor = .gray
         return label
     }()
     
     private lazy var milesLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont(name: "AvenirNext-Medium", size: 17)
         label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

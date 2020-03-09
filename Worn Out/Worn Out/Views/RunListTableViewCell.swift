@@ -34,6 +34,7 @@ class RunListTableViewCell: UITableViewCell {
     
     private lazy var milesLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont(name: "AvenirNext-Medium", size: 17)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
