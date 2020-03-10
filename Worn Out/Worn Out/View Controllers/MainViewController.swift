@@ -68,8 +68,6 @@ class MainViewController: UIViewController {
                 self.healthKitController.sync()
             }
         }
-        
-        self.healthKitController.sync()
     }
     
     override func viewWillAppear(_ animated: Bool) {

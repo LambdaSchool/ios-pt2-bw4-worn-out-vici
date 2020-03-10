@@ -13,15 +13,15 @@ import UIKit
 extension Shoe {
     var displayTotalMiles: String? {
         let numberFormatter = NumberFormatter()
-        numberFormatter.maximumSignificantDigits = 1
-        numberFormatter.usesSignificantDigits = true
+        numberFormatter.minimumFractionDigits = 1
+        numberFormatter.maximumFractionDigits = 1
         return numberFormatter.string(from: NSNumber(value: self.calculateTotalMiles()))
     }
     
     var displayMaxMiles: String? {
         let numberFormatter = NumberFormatter()
-        numberFormatter.maximumSignificantDigits = 2
-        numberFormatter.usesSignificantDigits = true
+        numberFormatter.minimumFractionDigits = 1
+        numberFormatter.maximumFractionDigits = 2
         return numberFormatter.string(from: NSNumber(value: self.maxMiles))
     }
     

@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             self.sendNotification()
-                        
+
             // If you have subscribed for background updates you must call the completion handler here.
             completion()
         }
